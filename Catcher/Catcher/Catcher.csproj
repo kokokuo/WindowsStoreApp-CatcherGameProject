@@ -290,12 +290,6 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerrun2.xnb">
       <Link>Content\Play\fatdance\fatdancerrun2.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fireman_1.xnb">
-      <Link>Content\Play\fireman_1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fireman_2.xnb">
-      <Link>Content\Play\fireman_2.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_caught.xnb">
       <Link>Content\Play\flyoldlady\flyoldlady_caught.xnb</Link>
     </Content>
@@ -334,9 +328,6 @@
     </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\slow.xnb">
       <Link>Content\Play\Item\slow.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\left_button.xnb">
-      <Link>Content\Play\left_button.xnb</Link>
     </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\life.xnb">
       <Link>Content\Play\life.xnb</Link>
@@ -401,12 +392,6 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_run3.xnb">
       <Link>Content\Play\naughtyboy\naughtyboy_run3.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\net1.xnb">
-      <Link>Content\Play\net1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\net2.xnb">
-      <Link>Content\Play\net2.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmancaught.xnb">
       <Link>Content\Play\oldman\oldmancaught.xnb</Link>
     </Content>
@@ -428,17 +413,8 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanrun3.xnb">
       <Link>Content\Play\oldman\oldmanrun3.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\pause.xnb">
-      <Link>Content\Play\pause.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\pause_bigger.xnb">
       <Link>Content\Play\pause_bigger.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\play_back.xnb">
-      <Link>Content\Play\play_back.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\right_button.xnb">
-      <Link>Content\Play\right_button.xnb</Link>
     </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxannefall.xnb">
       <Link>Content\Play\roxanne\roxannefall.xnb</Link>
@@ -467,9 +443,6 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\score_fix.xnb">
       <Link>Content\Play\score_fix.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\smoke.xnb">
-      <Link>Content\Play\smoke.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\SavedPeopleFont.xnb">
       <Link>Content\SavedPeopleFont.xnb</Link>
     </Content>
@@ -490,6 +463,16 @@
     <Content Include="Content\StartComic\comic1920.xnb" />
     <Content Include="Content\TopScore\top_score_back.xnb" />
     <Content Include="Content\TopScore\top_score_closeButton.xnb" />
+    <Content Include="Content\Play\play_back.xnb" />
+    <Content Include="Content\Play\floor.xnb" />
+    <Content Include="Content\Play\fireman_1.xnb" />
+    <Content Include="Content\Play\fireman_2.xnb" />
+    <Content Include="Content\Play\left_button.xnb" />
+    <Content Include="Content\Play\net1.xnb" />
+    <Content Include="Content\Play\net2.xnb" />
+    <Content Include="Content\Play\pause.xnb" />
+    <Content Include="Content\Play\right_button.xnb" />
+    <Content Include="Content\Play\smoke.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />

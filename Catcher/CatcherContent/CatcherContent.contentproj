@@ -403,11 +403,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Play\play_back.jpg">
-      <Name>play_back</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Play\right_button.png">
       <Name>right_button</Name>
       <Importer>TextureImporter</Importer>
@@ -620,6 +615,20 @@
   <ItemGroup>
     <Compile Include="TopScore\top_score_closeButton.png">
       <Name>top_score_closeButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Play\play_back.png">
+      <Name>play_back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Play\floor.png">
+      <Name>floor</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
