@@ -20,6 +20,7 @@ namespace Catcher.TextureManager
         MENU_TOP_SCORE_BUTTON,
 
         TOP_SCORE_DIALOG_BACK,
+        TOP_SCORE_CLOSE_BUTTON,
         DIALOG_CLOSE_BUTTON,
         DIALOG_LEFT_BUTTON,
         DIALOG_RIGHT_BUTTON,
@@ -76,7 +77,6 @@ namespace Catcher.TextureManager
         GAMEOVER_BACKGROUND,
         GAMEOVER_MENU_BUTTON,
         GAMEOVER_AGAIN_BUTTON,
-        GAMEOVER_PHOTO,
 
         //DICTIONARY---------------------
         DICTIONARY_BACKGROUND,

@@ -82,13 +82,11 @@ CatcherContent\Play\roxanne\roxanne_run.xnb
 CatcherContent\Play\score.xnb
 CatcherContent\Play\score_fix.xnb
 CatcherContent\Play\smoke.xnb
-CatcherContent\StartComic\comic800.xnb
 CatcherContent\TopScore\top_score_back.xnb
 CatcherContent\Dialog\Howtoplay\howtoplay_page1.xnb
 CatcherContent\Play\GameOver\gameover_again.xnb
 CatcherContent\Play\GameOver\gameover_back.xnb
 CatcherContent\Play\GameOver\gameover_menu.xnb
-CatcherContent\Play\GameOver\gameover_photo.xnb
 CatcherContent\Dialog\Howtoplay\howtoplay_page2.xnb
 CatcherContent\Dialog\Howtoplay\howtoplay_page3.xnb
 CatcherContent\Dialog\Howtoplay\howtoplay_back.xnb
@@ -108,6 +106,8 @@ CatcherContent\Dialog\Dictionary\dictionary_rightButton.xnb
 CatcherContent\Dialog\Dictionary\dictionary_closeButton.xnb
 CatcherContent\Dialog\Howtoplay\howtoplay_closeButton.xnb
 CatcherContent\Menu\menu_back.xnb
+CatcherContent\StartComic\comic1920.xnb
+CatcherContent\TopScore\top_score_closeButton.xnb
 CatcherContent\LostPeopleFont.xnb
 CatcherContent\SavedPeopleFont.xnb
 CatcherContent\TopScoreFont.xnb

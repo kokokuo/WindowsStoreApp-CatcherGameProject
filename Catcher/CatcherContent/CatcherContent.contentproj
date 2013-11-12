@@ -463,11 +463,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="StartComic\comic800.jpg">
-      <Name>comic800</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="TopScore\top_score_back.png">
       <Name>top_score_back</Name>
       <Importer>TextureImporter</Importer>
@@ -494,11 +489,6 @@
     </Compile>
     <Compile Include="Play\GameOver\gameover_menu.png">
       <Name>gameover_menu</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Play\GameOver\gameover_photo.png">
-      <Name>gameover_photo</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -616,6 +606,20 @@
   <ItemGroup>
     <Compile Include="Menu\menu_back.png">
       <Name>menu_back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="StartComic\comic1920.png">
+      <Name>comic1920</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TopScore\top_score_closeButton.png">
+      <Name>top_score_closeButton</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

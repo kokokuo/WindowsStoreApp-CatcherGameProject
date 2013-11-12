@@ -10,6 +10,7 @@ using Catcher.GameStates;
 using Catcher.GameObjects;
 using Catcher.FontManager;
 using Catcher.FileStorageHelper;
+using Catcher.TextureManager;
 namespace Catcher.GameStates.Dialog
 {
     public class TopScoreDialog : GameDialog
@@ -42,6 +43,7 @@ namespace Catcher.GameStates.Dialog
         {
             background = currentState.GetTexture2DList(TextureManager.TexturesKeyEnum.TOP_SCORE_DIALOG_BACK)[0];
             topSavedPeopleNumberFont = currentState.GetSpriteFontFromKeyByGameState(SpriteFontKeyEnum.TOP_SCORE_FONT);
+            closeButton.LoadResource(TexturesKeyEnum.TOP_SCORE_CLOSE_BUTTON);
             base.LoadResource(); //載入CloseButton 圖片資源
             base.isLoadContent = true;
         }

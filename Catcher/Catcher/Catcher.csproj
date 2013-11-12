@@ -473,14 +473,8 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\SavedPeopleFont.xnb">
       <Link>Content\SavedPeopleFont.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\StartComic\comic800.xnb">
-      <Link>Content\StartComic\comic800.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\TopScoreFont.xnb">
       <Link>Content\TopScoreFont.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\TopScore\top_score_back.xnb">
-      <Link>Content\TopScore\top_score_back.xnb</Link>
     </Content>
     <None Include="Catcher_TemporaryKey.pfx" />
     <Content Include="Content\Dialog\left_button.xnb" />
@@ -488,12 +482,14 @@
     <Content Include="Content\Play\GameOver\gameover_again.xnb" />
     <Content Include="Content\Play\GameOver\gameover_back.xnb" />
     <Content Include="Content\Play\GameOver\gameover_menu.xnb" />
-    <Content Include="Content\Play\GameOver\gameover_photo.xnb" />
     <Content Include="Content\close.xnb" />
     <Content Include="Content\Dialog\Dictionary\dictionary_leftButton.xnb" />
     <Content Include="Content\Dialog\Dictionary\dictionary_rightButton.xnb" />
     <Content Include="Content\Dialog\Dictionary\dictionary_closeButton.xnb" />
     <Content Include="Content\Dialog\Howtoplay\howtoplay_closeButton.xnb" />
+    <Content Include="Content\StartComic\comic1920.xnb" />
+    <Content Include="Content\TopScore\top_score_back.xnb" />
+    <Content Include="Content\TopScore\top_score_closeButton.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />

@@ -16,8 +16,6 @@ namespace Catcher.GameStates
         Button menuButton;
         Button againButton;
 
-        TextureLayer photoTexture;
-
         public GameOverState(MainGame gMainGame)
             : base(gMainGame)
         {
@@ -31,7 +29,6 @@ namespace Catcher.GameStates
             menuButton.LoadResource(TexturesKeyEnum.GAMEOVER_MENU_BUTTON);
             againButton.LoadResource(TexturesKeyEnum.GAMEOVER_AGAIN_BUTTON);
 
-            photoTexture.LoadResource(TexturesKeyEnum.GAMEOVER_PHOTO);
         }
 
         public override void BeginInit()
@@ -40,11 +37,8 @@ namespace Catcher.GameStates
             menuButton = new Button(this, objIdCount++, 0, 0);
             againButton = new Button(this, objIdCount++, 0, 0);
 
-            photoTexture = new TextureLayer(this, objIdCount++, 0, 0);
-
             AddGameObject(menuButton);
             AddGameObject(againButton);
-            AddGameObject(photoTexture);
 
         }
         public override void Update()

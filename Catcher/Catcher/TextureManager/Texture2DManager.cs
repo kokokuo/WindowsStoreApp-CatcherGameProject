@@ -39,6 +39,7 @@ namespace Catcher.TextureManager
 
             //載入最高分對話框所用的圖像資源
             LoadTopScoreDialogBackground();
+            LoadTopScoreDialogCloseButton();
 
 
             //載入開頭動畫
@@ -75,7 +76,6 @@ namespace Catcher.TextureManager
             LoadGameOverBackground();
             LoadGameOverMenuButton();
             LoadGameOverAgainButton();
-            LoadGameOverPhtotButton();
             
             //載入Dialog中共用元件
             LoadDialogLeftButton();
@@ -232,6 +232,18 @@ namespace Catcher.TextureManager
             }
         }
 
+        //最高分的關閉按鈕
+        private void LoadTopScoreDialogCloseButton()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.TOP_SCORE_CLOSE_BUTTON;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("TopScore/top_score_closeButton"));
+                _dictionary.Add(key, texture2Ds);
+            }
+        }
+
         //遊戲開場動畫----------------------------------------------------------------
         private void LoadGameStartComic()
         {
@@ -239,7 +251,7 @@ namespace Catcher.TextureManager
             if (!_dictionary.ContainsKey(key))
             {
                 List<Texture2D> texture2Ds = new List<Texture2D>();
-                texture2Ds.Add(mainGame.Content.Load<Texture2D>("StartComic/comic800"));
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("StartComic/comic1920"));
                 _dictionary.Add(key, texture2Ds);
             }
 
@@ -707,19 +719,6 @@ namespace Catcher.TextureManager
                 _dictionary.Add(key, texture2Ds);
             }
         }
-        private void LoadGameOverPhtotButton()
-        {
-            TexturesKeyEnum key = TexturesKeyEnum.GAMEOVER_PHOTO;
-            if (!_dictionary.ContainsKey(key))
-            {
-                List<Texture2D> texture2Ds = new List<Texture2D>();
-                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Play/GameOver/gameover_photo"));
-                _dictionary.Add(key, texture2Ds);
-            }
-        }
-
-
-
 
         //Dialog中元件---------------------------------------------------------------------------------
 
