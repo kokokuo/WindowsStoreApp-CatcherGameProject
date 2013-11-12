@@ -491,6 +491,10 @@
     <None Include="Catcher_TemporaryKey.pfx" />
     <Content Include="Content\Dialog\left_button.xnb" />
     <Content Include="Content\Dialog\right_button.xnb" />
+    <Content Include="Content\Play\GameOver\gameover_again.xnb" />
+    <Content Include="Content\Play\GameOver\gameover_back.xnb" />
+    <Content Include="Content\Play\GameOver\gameover_menu.xnb" />
+    <Content Include="Content\Play\GameOver\gameover_photo.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />

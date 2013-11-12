@@ -71,7 +71,12 @@ namespace Catcher.TextureManager
             LoadPauseDialogExitButton();
             LoadPauseDialogContinueButton();
 
-
+            //載入GameOver元件
+            LoadGameOverBackground();
+            LoadGameOverMenuButton();
+            LoadGameOverAgainButton();
+            LoadGameOverPhtotButton();
+            
             //載入Dialog中共用元件
             LoadDialogLeftButton();
             LoadDialogRightButton();

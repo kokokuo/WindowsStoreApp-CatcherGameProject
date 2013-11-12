@@ -102,6 +102,10 @@ CatcherContent\Play\score_fix.xnb
 CatcherContent\Play\smoke.xnb
 CatcherContent\StartComic\comic800.xnb
 CatcherContent\TopScore\top_score_back.xnb
+CatcherContent\Play\GameOver\gameover_again.xnb
+CatcherContent\Play\GameOver\gameover_back.xnb
+CatcherContent\Play\GameOver\gameover_menu.xnb
+CatcherContent\Play\GameOver\gameover_photo.xnb
 CatcherContent\LostPeopleFont.xnb
 CatcherContent\SavedPeopleFont.xnb
 CatcherContent\TopScoreFont.xnb
