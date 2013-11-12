@@ -7,7 +7,6 @@ CatcherContent\Dialog\Dictionary\dictionary_oldman_intro.xnb
 CatcherContent\Dialog\Dictionary\dictionary_roxanne_intro.xnb
 CatcherContent\Menu\dictionary.xnb
 CatcherContent\Menu\how.xnb
-CatcherContent\Menu\menu_back.xnb
 CatcherContent\Menu\side.xnb
 CatcherContent\Menu\start.xnb
 CatcherContent\Menu\top.xnb
@@ -108,6 +107,7 @@ CatcherContent\Dialog\Dictionary\dictionary_leftButton.xnb
 CatcherContent\Dialog\Dictionary\dictionary_rightButton.xnb
 CatcherContent\Dialog\Dictionary\dictionary_closeButton.xnb
 CatcherContent\Dialog\Howtoplay\howtoplay_closeButton.xnb
+CatcherContent\Menu\menu_back.xnb
 CatcherContent\LostPeopleFont.xnb
 CatcherContent\SavedPeopleFont.xnb
 CatcherContent\TopScoreFont.xnb

@@ -69,11 +69,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Menu\menu_back.png">
-      <Name>menu_back</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Menu\side.png">
       <Name>side</Name>
       <Importer>TextureImporter</Importer>
@@ -614,6 +609,13 @@
   <ItemGroup>
     <Compile Include="Dialog\Howtoplay\howtoplay_closeButton.png">
       <Name>howtoplay_closeButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Menu\menu_back.png">
+      <Name>menu_back</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
