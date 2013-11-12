@@ -24,23 +24,8 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dialog\Dictionary\dictionary_back.png">
-      <Name>dictionary_back</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\Dictionary\dictionary_fatdancer.png">
-      <Name>dictionary_fatdancer</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Dialog\Dictionary\dictionary_fatdancer_intro.png">
       <Name>dictionary_fatdancer_intro</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\Dictionary\dictionary_flyoldlady.png">
-      <Name>dictionary_flyoldlady</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -49,18 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Dialog\Dictionary\dictionary_littlegirl.png">
-      <Name>dictionary_littlegirl</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Dialog\Dictionary\dictionary_littlegirl_intro.png">
       <Name>dictionary_littlegirl_intro</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\Dictionary\dictionary_manstubble.png">
-      <Name>dictionary_manstubble</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -69,28 +44,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Dialog\Dictionary\dictionary_naughtyboy.png">
-      <Name>dictionary_naughtyboy</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Dialog\Dictionary\dictionary_naughtyboy_intro.png">
       <Name>dictionary_naughtyboy_intro</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Dialog\Dictionary\dictionary_oldman.png">
-      <Name>dictionary_oldman</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Dialog\Dictionary\dictionary_oldman_intro.png">
       <Name>dictionary_oldman_intro</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\Dictionary\dictionary_roxanne.png">
-      <Name>dictionary_roxanne</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -584,6 +544,69 @@
   <ItemGroup>
     <Compile Include="close.png">
       <Name>close</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialog\Dictionary\dictionary_back.png">
+      <Name>dictionary_back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialog\Dictionary\dictionary_naughtyboy.png">
+      <Name>dictionary_naughtyboy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Dialog\Dictionary\dictionary_fatdancer.png">
+      <Name>dictionary_fatdancer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Dialog\Dictionary\dictionary_littlegirl.png">
+      <Name>dictionary_littlegirl</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Dialog\Dictionary\dictionary_manstubble.png">
+      <Name>dictionary_manstubble</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Dialog\Dictionary\dictionary_oldman.png">
+      <Name>dictionary_oldman</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Dialog\Dictionary\dictionary_flyoldlady.png">
+      <Name>dictionary_flyoldlady</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Dialog\Dictionary\dictionary_roxanne.png">
+      <Name>dictionary_roxanne</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialog\Dictionary\dictionary_leftButton.png">
+      <Name>dictionary_leftButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Dialog\Dictionary\dictionary_rightButton.png">
+      <Name>dictionary_rightButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialog\Dictionary\dictionary_closeButton.png">
+      <Name>dictionary_closeButton</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

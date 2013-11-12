@@ -490,6 +490,9 @@
     <Content Include="Content\Play\GameOver\gameover_menu.xnb" />
     <Content Include="Content\Play\GameOver\gameover_photo.xnb" />
     <Content Include="Content\close.xnb" />
+    <Content Include="Content\Dialog\Dictionary\dictionary_leftButton.xnb" />
+    <Content Include="Content\Dialog\Dictionary\dictionary_rightButton.xnb" />
+    <Content Include="Content\Dialog\Dictionary\dictionary_closeButton.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />

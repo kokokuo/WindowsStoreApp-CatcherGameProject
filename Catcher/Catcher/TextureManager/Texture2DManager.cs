@@ -83,6 +83,9 @@ namespace Catcher.TextureManager
 
             //載入字典對話框所用的圖像資源
             LoadDictionaryDialogBackground();
+            LoadDictionaryDialogCloseButton();
+            LoadDictionaryDialogLeftButton();
+            LoadDictionaryDialogRightButton();
             LoadDictionaryDialogLittleGirlTexture();
             LoadDictionaryDialogLittleGirlIntroTexture();
             LoadDictionaryDialogFatDancerTexture();
@@ -759,7 +762,38 @@ namespace Catcher.TextureManager
             }
         }
 
-       
+        private void LoadDictionaryDialogLeftButton()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.DICTIONARY_LEFT_BUTTON;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Dialog/Dictionary/dictionary_leftButton"));
+                _dictionary.Add(key, texture2Ds);
+            }
+        }
+
+        private void LoadDictionaryDialogRightButton()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.DICTIONARY_RIGHT_BUTTON;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Dialog/Dictionary/dictionary_rightButton"));
+                _dictionary.Add(key, texture2Ds);
+            }
+        }
+
+        private void LoadDictionaryDialogCloseButton()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.DICTIONARY_CLOSE_BUTTON;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Dialog/Dictionary/dictionary_closeButton"));
+                _dictionary.Add(key, texture2Ds);
+            }
+        }
 
         //字典內容  
         private void LoadDictionaryDialogLittleGirlIntroTexture()

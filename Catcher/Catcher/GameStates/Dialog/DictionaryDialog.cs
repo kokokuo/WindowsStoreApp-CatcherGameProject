@@ -83,8 +83,8 @@ namespace Catcher.GameStates.Dialog
         public override void LoadResource()
         {
             background = currentState.GetTexture2DList(TextureManager.TexturesKeyEnum.DICTIONARY_BACKGROUND)[0];
-            leftButton.LoadResource(TexturesKeyEnum.DIALOG_LEFT_BUTTON);
-            rightButton.LoadResource(TexturesKeyEnum.DIALOG_RIGHT_BUTTON);
+            leftButton.LoadResource(TexturesKeyEnum.DICTIONARY_LEFT_BUTTON);
+            rightButton.LoadResource(TexturesKeyEnum.DICTIONARY_RIGHT_BUTTON);
             littlegirlTexture.LoadResource(TexturesKeyEnum.DICTIONARY_LITTLEGIRL_TEXTURE);
             littlegirlIntroTexture.LoadResource(TexturesKeyEnum.DICTIONARY_LITTLEGIRL_INTRO_TEXTURE);
 
@@ -100,7 +100,7 @@ namespace Catcher.GameStates.Dialog
             oldmanIntroTexture.LoadResource(TexturesKeyEnum.DICTIONARY_OLDMAN_INTRO_TEXTURE);
             roxanneTexture.LoadResource(TexturesKeyEnum.DICTIONARY_ROXANNE_TEXTURE);
             roxanneIntroTexture.LoadResource(TexturesKeyEnum.DICTIONARY_ROXANNE_INTRO_TEXTURE);
-
+            closeButton.LoadResource(TexturesKeyEnum.DICTIONARY_CLOSE_BUTTON);
 
             base.LoadResource();
         }
