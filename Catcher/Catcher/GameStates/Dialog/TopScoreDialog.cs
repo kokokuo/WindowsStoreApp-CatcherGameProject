@@ -66,7 +66,7 @@ namespace Catcher.GameStates.Dialog
         public override void Draw()
         {
             gameSateSpriteBatch.Draw(background, backgroundPos, Color.White);
-            gameSateSpriteBatch.DrawString(topSavedPeopleNumberFont, topSavedPeoepleNumber.ToString(), new Vector2(background.Width / 2, background.Height / 2), Color.White);
+            gameSateSpriteBatch.DrawString(topSavedPeopleNumberFont, topSavedPeoepleNumber.ToString(), new Vector2(background.Width / 2, background.Height / 2), Color.Black);
             base.Draw(); //繪製遊戲元件
         }
     }

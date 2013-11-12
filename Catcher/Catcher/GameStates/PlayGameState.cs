@@ -54,7 +54,7 @@ namespace Catcher.GameStates
         List<DropObjects> fallingObjects;
        
         RandGenerateDropObjsSystem randSys;
-        bool isOver;
+        bool isOver,isWriteingFile;
         
         public PlayGameState(MainGame gMainGame) 
             :base(gMainGame)
@@ -77,7 +77,7 @@ namespace Catcher.GameStates
             base.rightGameScreenBorder = RIGHT_MOVE_BUTTON_X_POS;
             base.leftGameScreenBorder = base.GetTexture2DList(TexturesKeyEnum.PLAY_LEFT_MOVE_BUTTON)[0].Width;
             isOver = false;
-
+            isWriteingFile = false;
             //初始化隨機角色產生系統
             randSys = new RandGenerateDropObjsSystem(this, 2,3, 3,3,5,2);
             randSys.SetBorder(leftGameScreenBorder, rightGameScreenBorder);
@@ -276,7 +276,11 @@ namespace Catcher.GameStates
                     //紀錄檔案
                     GameRecordData data = new GameRecordData();
                     data.SavePeopleNumber = savedPeopleNumber;
-                    await StorageHelper.SaveTextToFile("record.catcher", JsonHelper.Serialize<GameRecordData>(data));   
+                    if (!isWriteingFile)
+                    {
+                        await StorageHelper.SaveTextToFile("record.catcher", JsonHelper.Serialize<GameRecordData>(data));
+                        isWriteingFile = true;
+                    }
                     //切換狀態
                     base.SetNextGameSateByMain(GameStateEnum.STATE_GAME_OVER);
                 }
