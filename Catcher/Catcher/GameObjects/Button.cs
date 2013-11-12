@@ -89,7 +89,11 @@ namespace Catcher.GameObjects
             Color[] currtentTextureColor = new Color[currentTexture.Width * currentTexture.Height];
             currentTexture.GetData<Color>(currtentTextureColor);
             //偵測按下去的座標換算成圖片圖片的像素位置
-            Color clickPoint = currtentTextureColor[((int)x - currentTexture.Bounds.Left) + (((int)y) - currentTexture.Bounds.Top) * currentTexture.Bounds.Width];
+            int pixelPos = ((int)x - currentTexture.Bounds.Left) + (((int)y) - currentTexture.Bounds.Top) * currentTexture.Bounds.Width;
+            if(currtentTextureColor.Length < pixelPos)
+                return false;
+
+            Color clickPoint = currtentTextureColor[pixelPos];
             if (clickPoint.A != 0)
             {
                 return true;

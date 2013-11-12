@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Windows.Storage; //檔案存取
 using System.Diagnostics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
@@ -11,6 +12,7 @@ using Catcher.GameObjects;
 using Catcher.TextureManager;
 using Catcher.GameStates.Dialog;
 using Catcher.FontManager;
+using Catcher.FileStorageHelper;
 
 namespace Catcher.GameStates
 {
@@ -52,6 +54,8 @@ namespace Catcher.GameStates
         List<DropObjects> fallingObjects;
        
         RandGenerateDropObjsSystem randSys;
+        bool isOver;
+        
         public PlayGameState(MainGame gMainGame) 
             :base(gMainGame)
         {
@@ -72,7 +76,8 @@ namespace Catcher.GameStates
             //設定消防員的移動邊界(包含角色掉落的邊界也算在內)
             base.rightGameScreenBorder = RIGHT_MOVE_BUTTON_X_POS;
             base.leftGameScreenBorder = base.GetTexture2DList(TexturesKeyEnum.PLAY_LEFT_MOVE_BUTTON)[0].Width;
-            
+            isOver = false;
+
             //初始化隨機角色產生系統
             randSys = new RandGenerateDropObjsSystem(this, 2,3, 3,3,5,2);
             randSys.SetBorder(leftGameScreenBorder, rightGameScreenBorder);
@@ -169,7 +174,7 @@ namespace Catcher.GameStates
                 //Release();
                 //遊戲結束
                 Debug.WriteLine("Game Over...");
-                //切換到遊戲結束的畫面
+                isOver = true;
             }
         }
 
@@ -215,7 +220,7 @@ namespace Catcher.GameStates
 
 
 
-        public override void Update()
+        async public override void Update()
         {
             //如果沒有談出對話框->處理遊戲邏輯
             if (!base.hasDialogShow)
@@ -264,6 +269,16 @@ namespace Catcher.GameStates
                 //如果有要移除的元件,執行移除方法
                 if (willRemoveObjectId.Count > 0) {
                     RemoveGameObjectFromList();
+                }
+                
+                //切換到遊戲結束的畫面
+                if (isOver) {
+                    //紀錄檔案
+                    GameRecordData data = new GameRecordData();
+                    data.SavePeopleNumber = savedPeopleNumber;
+                    await StorageHelper.SaveTextToFile("record.catcher", JsonHelper.Serialize<GameRecordData>(data));   
+                    //切換狀態
+                    base.SetNextGameSateByMain(GameStateEnum.STATE_GAME_OVER);
                 }
             }
             base.Update();

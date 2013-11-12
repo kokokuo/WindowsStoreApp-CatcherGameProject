@@ -127,6 +127,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileStorageHelper\GameRecordData.cs" />
+    <Compile Include="FileStorageHelper\JsonHelper.cs" />
+    <Compile Include="FileStorageHelper\StorageHelper.cs" />
     <Compile Include="FontManager\FontSpriteManager.cs" />
     <Compile Include="FontManager\SpriteFontKeyEnum.cs" />
     <Compile Include="GameObjects\Button.cs" />

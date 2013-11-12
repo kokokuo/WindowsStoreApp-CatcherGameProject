@@ -8,28 +8,40 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Catcher.GameStates;
 using Catcher.GameObjects;
-
+using Catcher.FontManager;
+using Catcher.FileStorageHelper;
 namespace Catcher.GameStates.Dialog
 {
     public class TopScoreDialog : GameDialog
     {
-        
+        SpriteFont topSavedPeopleNumberFont;
+        GameRecordData readData;
+        int topSavedPeoepleNumber;
         public TopScoreDialog(GameState pCurrentState)
             : base(pCurrentState) 
         { 
         }
 
-        public override void BeginInit()
+        async public override void BeginInit()
         {
             backgroundPos = new Vector2(0,0);
             closeButton = new Button(base.currentState, base.countId++, 0, 0);
             AddGameObject(closeButton);
+            topSavedPeoepleNumber = 0;
+
+            var file = await StorageHelper.ReadTextFromFile("record.catcher");
+            if (!String.IsNullOrEmpty(file))
+            {
+                readData = JsonHelper.Deserialize<GameRecordData>(file);
+                topSavedPeoepleNumber = readData.SavePeopleNumber;
+            }
 
             base.isInit = true;
         }
         public override void LoadResource()
         {
             background = currentState.GetTexture2DList(TextureManager.TexturesKeyEnum.TOP_SCORE_DIALOG_BACK)[0];
+            topSavedPeopleNumberFont = currentState.GetSpriteFontFromKeyByGameState(SpriteFontKeyEnum.TOP_SCORE_FONT);
             base.LoadResource(); //載入CloseButton 圖片資源
             base.isLoadContent = true;
         }
@@ -54,6 +66,7 @@ namespace Catcher.GameStates.Dialog
         public override void Draw()
         {
             gameSateSpriteBatch.Draw(background, backgroundPos, Color.White);
+            gameSateSpriteBatch.DrawString(topSavedPeopleNumberFont, topSavedPeoepleNumber.ToString(), new Vector2(background.Width / 2, background.Height / 2), Color.White);
             base.Draw(); //繪製遊戲元件
         }
     }
