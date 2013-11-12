@@ -100,6 +100,7 @@ namespace Catcher.TextureManager
 
         //HOWTOPLAY------------------------
         HOWTOPLAY_BACKGROUND,
+        HOWTOPLAY_CLOSE_BUTTON,
         HOWTOPLAY_PAGE1,
         HOWTOPLAY_PAGE2,
         HOWTOPLAY_PAGE3

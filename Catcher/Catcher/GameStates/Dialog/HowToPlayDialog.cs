@@ -63,6 +63,7 @@ namespace Catcher.GameStates.Dialog
             page1Texture.LoadResource(TexturesKeyEnum.HOWTOPLAY_PAGE1);
             page2Texture.LoadResource(TexturesKeyEnum.HOWTOPLAY_PAGE2);
             page3Texture.LoadResource(TexturesKeyEnum.HOWTOPLAY_PAGE3);
+            closeButton.LoadResource(TexturesKeyEnum.HOWTOPLAY_CLOSE_BUTTON);
             base.LoadResource();
         }
         public override void Update()

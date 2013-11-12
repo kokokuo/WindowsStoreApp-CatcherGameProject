@@ -103,6 +103,7 @@ namespace Catcher.TextureManager
 
             //載入HOWTOPLAY所用的圖像資源
             LoadHowtoplayDialogBackground();
+            LoadHowtoplayDialogCloseButton();
             LoadHowtoplayDialogPage1();
             LoadHowtoplayDialogPage2();
             LoadHowtoplayDialogPage3();
@@ -963,6 +964,17 @@ namespace Catcher.TextureManager
                 _dictionary.Add(key, texture2Ds);
             }
         }
+        private void LoadHowtoplayDialogCloseButton()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.HOWTOPLAY_CLOSE_BUTTON;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Dialog/Howtoplay/howtoplay_closeButton"));
+                _dictionary.Add(key, texture2Ds);
+            }
+        }
+
         private void LoadHowtoplayDialogPage1()
         {
             TexturesKeyEnum key = TexturesKeyEnum.HOWTOPLAY_PAGE1;
