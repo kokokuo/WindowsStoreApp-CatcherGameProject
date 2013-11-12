@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A66B919-09A6-4AB6-8D53-81C5C03C5394}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Catcher</RootNamespace>
+    <AssemblyName>Catcher</AssemblyName>
+    <DefaultLanguage>zh-TW</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Catcher_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Windows8\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Windows8\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Windows8\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\Windows8\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Windows8\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\Windows8\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Windows8\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\Windows8\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\Windows8\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\Windows8\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XInput">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\Windows8\SharpDX.XInput.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\Windows8\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\Windows8\SharpDX.Direct3D11.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\Windows8\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.MediaFoundation">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\Windows8\SharpDX.MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XAudio2">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\Windows8\SharpDX.XAudio2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FontManager\FontSpriteManager.cs" />
+    <Compile Include="FontManager\SpriteFontKeyEnum.cs" />
+    <Compile Include="GameObjects\Button.cs" />
+    <Compile Include="GameObjects\Creature.cs" />
+    <Compile Include="GameObjects\CreatureDataRecord.cs" />
+    <Compile Include="GameObjects\DropObjectDataRecord.cs" />
+    <Compile Include="GameObjects\DropObjects.cs" />
+    <Compile Include="GameObjects\DropObjectsKeyEnum.cs" />
+    <Compile Include="GameObjects\EffectItem.cs" />
+    <Compile Include="GameObjects\EffectItemDataRecord.cs" />
+    <Compile Include="GameObjects\FiremanPlayer.cs" />
+    <Compile Include="GameObjects\GameObject.cs" />
+    <Compile Include="GameObjects\Net.cs" />
+    <Compile Include="GameObjects\TextureLayer.cs" />
+    <Compile Include="GameStates\Dialog\DialogGameObjectEnum.cs" />
+    <Compile Include="GameStates\Dialog\DialogStateEnum.cs" />
+    <Compile Include="GameStates\Dialog\DictionaryDialog.cs" />
+    <Compile Include="GameStates\Dialog\GameDialog.cs" />
+    <Compile Include="GameStates\Dialog\HowToPlayDialog.cs" />
+    <Compile Include="GameStates\Dialog\PauseDialog.cs" />
+    <Compile Include="GameStates\Dialog\TopScoreDialog.cs" />
+    <Compile Include="GameStates\GameOverState.cs" />
+    <Compile Include="GameStates\GameStartComicState.cs" />
+    <Compile Include="GameStates\GameState.cs" />
+    <Compile Include="GameStates\GameStateEnum.cs" />
+    <Compile Include="GameStates\HomeMenuState.cs" />
+    <Compile Include="GameStates\PlayGameState.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="MainGame.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandGenerateDropObjsSystem.cs" />
+    <Compile Include="Sprite\AnimationSprite.cs" />
+    <Compile Include="TextureManager\Texture2DManager.cs" />
+    <Compile Include="TextureManager\TexturesKeyEnum.cs" />
+    <Compile Include="TouchPanelInput.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\close.xnb">
+      <Link>Content\close.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_back.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_back.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_fatdancer.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_fatdancer.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_fatdancer_intro.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_fatdancer_intro.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_flyoldlady.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_flyoldlady.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_flyoldlady_intro.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_flyoldlady_intro.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_littlegirl.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_littlegirl.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_littlegirl_intro.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_littlegirl_intro.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_manstubble.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_manstubble.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_manstubble_intro.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_manstubble_intro.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_naughtyboy.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_naughtyboy.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_naughtyboy_intro.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_naughtyboy_intro.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_nicole.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_nicole.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_nicole_intro.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_nicole_intro.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_oldman.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_oldman.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_oldman_intro.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_oldman_intro.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_roxanne.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_roxanne.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_roxanne_intro.xnb">
+      <Link>Content\Dialog\Dictionary\dictionary_roxanne_intro.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Howtoplay\howtoplay_back.xnb">
+      <Link>Content\Dialog\Howtoplay\howtoplay_back.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Howtoplay\howtoplay_page1.xnb">
+      <Link>Content\Dialog\Howtoplay\howtoplay_page1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Howtoplay\howtoplay_page2.xnb">
+      <Link>Content\Dialog\Howtoplay\howtoplay_page2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Howtoplay\howtoplay_page3.xnb">
+      <Link>Content\Dialog\Howtoplay\howtoplay_page3.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\left_button.xnb">
+      <Link>Content\Dialog\Dictionary\left_button.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\right_button.xnb">
+      <Link>Content\Dialog\Dictionary\right_button.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\LostPeopleFont.xnb">
+      <Link>Content\LostPeopleFont.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Menu\dictionary.xnb">
+      <Link>Content\Menu\dictionary.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Menu\how.xnb">
+      <Link>Content\Menu\how.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Menu\menu_back.xnb">
+      <Link>Content\Menu\menu_back.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Menu\side.xnb">
+      <Link>Content\Menu\side.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Menu\start.xnb">
+      <Link>Content\Menu\start.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Menu\top.xnb">
+      <Link>Content\Menu\top.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Pause\continue.xnb">
+      <Link>Content\Pause\continue.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Pause\exit.xnb">
+      <Link>Content\Pause\exit.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Pause\pause_back.xnb">
+      <Link>Content\Pause\pause_back.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\die.xnb">
+      <Link>Content\Play\die.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\die_2.xnb">
+      <Link>Content\Play\die_2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancercaught1.xnb">
+      <Link>Content\Play\fatdance\fatdancercaught1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancercaught2.xnb">
+      <Link>Content\Play\fatdance\fatdancercaught2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerfall1.xnb">
+      <Link>Content\Play\fatdance\fatdancerfall1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerfall2.xnb">
+      <Link>Content\Play\fatdance\fatdancerfall2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerfloor.xnb">
+      <Link>Content\Play\fatdance\fatdancerfloor.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerrun1.xnb">
+      <Link>Content\Play\fatdance\fatdancerrun1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerrun2.xnb">
+      <Link>Content\Play\fatdance\fatdancerrun2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fireman_1.xnb">
+      <Link>Content\Play\fireman_1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fireman_2.xnb">
+      <Link>Content\Play\fireman_2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_caught.xnb">
+      <Link>Content\Play\flyoldlady\flyoldlady_caught.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_fall1.xnb">
+      <Link>Content\Play\flyoldlady\flyoldlady_fall1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_fall2.xnb">
+      <Link>Content\Play\flyoldlady\flyoldlady_fall2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_fall3.xnb">
+      <Link>Content\Play\flyoldlady\flyoldlady_fall3.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_floor.xnb">
+      <Link>Content\Play\flyoldlady\flyoldlady_floor.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_run1.xnb">
+      <Link>Content\Play\flyoldlady\flyoldlady_run1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_run2.xnb">
+      <Link>Content\Play\flyoldlady\flyoldlady_run2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\boosting_shoes.xnb">
+      <Link>Content\Play\Item\boosting_shoes.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\disappear.xnb">
+      <Link>Content\Play\Item\disappear.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\heart.xnb">
+      <Link>Content\Play\Item\heart.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\Net expander.xnb">
+      <Link>Content\Play\Item\Net expander.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\Net shrinker.xnb">
+      <Link>Content\Play\Item\Net shrinker.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\slow.xnb">
+      <Link>Content\Play\Item\slow.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\left_button.xnb">
+      <Link>Content\Play\left_button.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\life.xnb">
+      <Link>Content\Play\life.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\life_fix.xnb">
+      <Link>Content\Play\life_fix.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlfall1.xnb">
+      <Link>Content\Play\littlegirl\littlegirlfall1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlfall2.xnb">
+      <Link>Content\Play\littlegirl\littlegirlfall2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlhavecaught.xnb">
+      <Link>Content\Play\littlegirl\littlegirlhavecaught.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlrun1.xnb">
+      <Link>Content\Play\littlegirl\littlegirlrun1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlrun2.xnb">
+      <Link>Content\Play\littlegirl\littlegirlrun2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlrun3.xnb">
+      <Link>Content\Play\littlegirl\littlegirlrun3.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblefall1.xnb">
+      <Link>Content\Play\manstubble\manstubblefall1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblefall2.xnb">
+      <Link>Content\Play\manstubble\manstubblefall2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblehavecaught.xnb">
+      <Link>Content\Play\manstubble\manstubblehavecaught.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblerun1.xnb">
+      <Link>Content\Play\manstubble\manstubblerun1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblerun2.xnb">
+      <Link>Content\Play\manstubble\manstubblerun2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblerun3.xnb">
+      <Link>Content\Play\manstubble\manstubblerun3.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_caught.xnb">
+      <Link>Content\Play\naughtyboy\naughtyboy_caught.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_fall1.xnb">
+      <Link>Content\Play\naughtyboy\naughtyboy_fall1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_fall2.xnb">
+      <Link>Content\Play\naughtyboy\naughtyboy_fall2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_floor.xnb">
+      <Link>Content\Play\naughtyboy\naughtyboy_floor.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_run1.xnb">
+      <Link>Content\Play\naughtyboy\naughtyboy_run1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_run2.xnb">
+      <Link>Content\Play\naughtyboy\naughtyboy_run2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_run3.xnb">
+      <Link>Content\Play\naughtyboy\naughtyboy_run3.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\net1.xnb">
+      <Link>Content\Play\net1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\net2.xnb">
+      <Link>Content\Play\net2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmancaught.xnb">
+      <Link>Content\Play\oldman\oldmancaught.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanfall1.xnb">
+      <Link>Content\Play\oldman\oldmanfall1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanfall2.xnb">
+      <Link>Content\Play\oldman\oldmanfall2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanfloor.xnb">
+      <Link>Content\Play\oldman\oldmanfloor.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanrun1.xnb">
+      <Link>Content\Play\oldman\oldmanrun1.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanrun2.xnb">
+      <Link>Content\Play\oldman\oldmanrun2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanrun3.xnb">
+      <Link>Content\Play\oldman\oldmanrun3.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\pause.xnb">
+      <Link>Content\Play\pause.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\pause_bigger.xnb">
+      <Link>Content\Play\pause_bigger.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\play_back.xnb">
+      <Link>Content\Play\play_back.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\right_button.xnb">
+      <Link>Content\Play\right_button.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxannefall.xnb">
+      <Link>Content\Play\roxanne\roxannefall.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxannefall2.xnb">
+      <Link>Content\Play\roxanne\roxannefall2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxannehave_caught.xnb">
+      <Link>Content\Play\roxanne\roxannehave_caught.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxanne_floor.xnb">
+      <Link>Content\Play\roxanne\roxanne_floor.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxanne_floor2.xnb">
+      <Link>Content\Play\roxanne\roxanne_floor2.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxanne_floor3.xnb">
+      <Link>Content\Play\roxanne\roxanne_floor3.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxanne_run.xnb">
+      <Link>Content\Play\roxanne\roxanne_run.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\score.xnb">
+      <Link>Content\Play\score.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\score_fix.xnb">
+      <Link>Content\Play\score_fix.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\smoke.xnb">
+      <Link>Content\Play\smoke.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\SavedPeopleFont.xnb">
+      <Link>Content\SavedPeopleFont.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\StartComic\comic800.xnb">
+      <Link>Content\StartComic\comic800.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\TopScoreFont.xnb">
+      <Link>Content\TopScoreFont.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\TopScore\top_score_back.xnb">
+      <Link>Content\TopScore\top_score_back.xnb</Link>
+    </Content>
+    <None Include="Catcher_TemporaryKey.pfx" />
+    <Content Include="Content\Dialog\left_button.xnb" />
+    <Content Include="Content\Dialog\right_button.xnb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
