@@ -1,4 +1,3 @@
-CatcherContent\close.xnb
 CatcherContent\Dialog\Dictionary\dictionary_back.xnb
 CatcherContent\Dialog\Dictionary\dictionary_fatdancer.xnb
 CatcherContent\Dialog\Dictionary\dictionary_fatdancer_intro.xnb
@@ -14,11 +13,6 @@ CatcherContent\Dialog\Dictionary\dictionary_oldman.xnb
 CatcherContent\Dialog\Dictionary\dictionary_oldman_intro.xnb
 CatcherContent\Dialog\Dictionary\dictionary_roxanne.xnb
 CatcherContent\Dialog\Dictionary\dictionary_roxanne_intro.xnb
-CatcherContent\Dialog\Howtoplay\howtoplay_back.xnb
-CatcherContent\Dialog\Howtoplay\howtoplay_page2.xnb
-CatcherContent\Dialog\Howtoplay\howtoplay_page3.xnb
-CatcherContent\Dialog\left_button.xnb
-CatcherContent\Dialog\right_button.xnb
 CatcherContent\Menu\dictionary.xnb
 CatcherContent\Menu\how.xnb
 CatcherContent\Menu\menu_back.xnb
@@ -104,6 +98,12 @@ CatcherContent\Play\GameOver\gameover_again.xnb
 CatcherContent\Play\GameOver\gameover_back.xnb
 CatcherContent\Play\GameOver\gameover_menu.xnb
 CatcherContent\Play\GameOver\gameover_photo.xnb
+CatcherContent\Dialog\Howtoplay\howtoplay_page2.xnb
+CatcherContent\Dialog\Howtoplay\howtoplay_page3.xnb
+CatcherContent\Dialog\Howtoplay\howtoplay_back.xnb
+CatcherContent\Dialog\left_button.xnb
+CatcherContent\Dialog\right_button.xnb
+CatcherContent\close.xnb
 CatcherContent\LostPeopleFont.xnb
 CatcherContent\SavedPeopleFont.xnb
 CatcherContent\TopScoreFont.xnb

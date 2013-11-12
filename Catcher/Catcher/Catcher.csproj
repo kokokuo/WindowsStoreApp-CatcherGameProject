@@ -170,9 +170,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\close.xnb">
-      <Link>Content\close.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_back.xnb">
       <Link>Content\Dialog\Dictionary\dictionary_back.xnb</Link>
     </Content>
@@ -492,6 +489,7 @@
     <Content Include="Content\Play\GameOver\gameover_back.xnb" />
     <Content Include="Content\Play\GameOver\gameover_menu.xnb" />
     <Content Include="Content\Play\GameOver\gameover_photo.xnb" />
+    <Content Include="Content\close.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />
