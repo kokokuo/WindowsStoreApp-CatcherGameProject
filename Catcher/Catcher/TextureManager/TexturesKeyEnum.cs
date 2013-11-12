@@ -72,6 +72,12 @@ namespace Catcher.TextureManager
         PAUSE_EXIT,
         PAUSE_CONTINUE,
 
+        //GAME OVER---------------------
+        GAMEOVER_BACKGROUND,
+        GAMEOVER_MENU_BUTTON,
+        GAMEOVER_AGAIN_BUTTON,
+        GAMEOVER_PHOTO,
+
         //DICTIONARY---------------------
         DICTIONARY_BACKGROUND,
         DICTIONARY_NICOLE_TEXTURE,

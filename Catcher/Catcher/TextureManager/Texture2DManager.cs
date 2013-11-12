@@ -668,6 +668,51 @@ namespace Catcher.TextureManager
             }
         }
 
+        //GAME OVER遊戲結束元件------------------------------------------------------
+        private void LoadGameOverBackground()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.GAMEOVER_BACKGROUND;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Play/GameOver/gameover_back"));
+                _dictionary.Add(key, texture2Ds);
+            }
+        }
+
+        private void LoadGameOverMenuButton()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.GAMEOVER_MENU_BUTTON;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Play/GameOver/gameover_menu"));
+                _dictionary.Add(key, texture2Ds);
+            }
+        }
+        private void LoadGameOverAgainButton()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.GAMEOVER_AGAIN_BUTTON;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Play/GameOver/gameover_again"));
+                _dictionary.Add(key, texture2Ds);
+            }
+        }
+        private void LoadGameOverPhtotButton()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.GAMEOVER_PHOTO;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Play/GameOver/gameover_photo"));
+                _dictionary.Add(key, texture2Ds);
+            }
+        }
+
+
+
 
         //Dialog中元件---------------------------------------------------------------------------------
 
