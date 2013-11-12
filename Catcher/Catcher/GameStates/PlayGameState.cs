@@ -278,7 +278,11 @@ namespace Catcher.GameStates
                     data.SavePeopleNumber = savedPeopleNumber;
                     if (!isWriteingFile)
                     {
-                        await StorageHelper.SaveTextToFile("record.catcher", JsonHelper.Serialize<GameRecordData>(data));
+                        try
+                        {
+                            await StorageHelper.SaveTextToFile("record.catcher", JsonHelper.Serialize<GameRecordData>(data));
+                        }
+                        catch { }
                         isWriteingFile = true;
                     }
                     //切換狀態
