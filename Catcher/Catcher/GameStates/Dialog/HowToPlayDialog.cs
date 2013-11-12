@@ -30,8 +30,8 @@ namespace Catcher.GameStates.Dialog
         }
         public override void BeginInit()
         {
-            pageStart = 9;
-            pageEnd = 11;
+            pageStart = 8;
+            pageEnd = 10;
             backgroundPos = new Vector2(0, 0);
             closeButton = new Button(base.currentState, base.countId++, 0,0);
             leftButton = new Button(base.currentState, base.countId++, 0, 0);

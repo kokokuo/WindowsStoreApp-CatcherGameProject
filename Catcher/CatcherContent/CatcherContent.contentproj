@@ -84,16 +84,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Dialog\Dictionary\dictionary_nicole.png">
-      <Name>dictionary_nicole</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\Dictionary\dictionary_nicole_intro.png">
-      <Name>dictionary_nicole_intro</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Dialog\Dictionary\dictionary_oldman.png">
       <Name>dictionary_oldman</Name>
       <Importer>TextureImporter</Importer>
@@ -111,36 +101,6 @@
     </Compile>
     <Compile Include="Dialog\Dictionary\dictionary_roxanne_intro.png">
       <Name>dictionary_roxanne_intro</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\Howtoplay\howtoplay_back.png">
-      <Name>howtoplay_back</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\Howtoplay\howtoplay_page1.png">
-      <Name>howtoplay_page1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\Howtoplay\howtoplay_page2.png">
-      <Name>howtoplay_page2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\Howtoplay\howtoplay_page3.png">
-      <Name>howtoplay_page3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\left_button.png">
-      <Name>left_button</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Dialog\right_button.png">
-      <Name>right_button</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -564,7 +524,13 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Dialog\Howtoplay\howtoplay_page1.png">
+      <Name>howtoplay_page1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Play\GameOver\gameover_again.png">
       <Name>gameover_again</Name>
@@ -583,6 +549,39 @@
     </Compile>
     <Compile Include="Play\GameOver\gameover_photo.png">
       <Name>gameover_photo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialog\Howtoplay\howtoplay_page2.png">
+      <Name>howtoplay_page2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Dialog\Howtoplay\howtoplay_page3.png">
+      <Name>howtoplay_page3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialog\Howtoplay\howtoplay_back.png">
+      <Name>howtoplay_back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialog\left_button.png">
+      <Name>left_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialog\right_button.png">
+      <Name>right_button</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

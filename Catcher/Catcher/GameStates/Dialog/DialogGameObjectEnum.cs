@@ -16,7 +16,6 @@ namespace Catcher.GameStates.Dialog
     {
         EMPTY = 0,
         //DICTIONARY-----------------------------
-        DICTIONARY_NICOLE,
         DICTIONARY_LITTLEGIRL,
         DICTIONARY_FATDANCER,
         DICTIONARY_FLYOLDLADY,

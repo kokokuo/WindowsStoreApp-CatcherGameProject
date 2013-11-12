@@ -10,14 +10,11 @@ CatcherContent\Dialog\Dictionary\dictionary_manstubble.xnb
 CatcherContent\Dialog\Dictionary\dictionary_manstubble_intro.xnb
 CatcherContent\Dialog\Dictionary\dictionary_naughtyboy.xnb
 CatcherContent\Dialog\Dictionary\dictionary_naughtyboy_intro.xnb
-CatcherContent\Dialog\Dictionary\dictionary_nicole.xnb
-CatcherContent\Dialog\Dictionary\dictionary_nicole_intro.xnb
 CatcherContent\Dialog\Dictionary\dictionary_oldman.xnb
 CatcherContent\Dialog\Dictionary\dictionary_oldman_intro.xnb
 CatcherContent\Dialog\Dictionary\dictionary_roxanne.xnb
 CatcherContent\Dialog\Dictionary\dictionary_roxanne_intro.xnb
 CatcherContent\Dialog\Howtoplay\howtoplay_back.xnb
-CatcherContent\Dialog\Howtoplay\howtoplay_page1.xnb
 CatcherContent\Dialog\Howtoplay\howtoplay_page2.xnb
 CatcherContent\Dialog\Howtoplay\howtoplay_page3.xnb
 CatcherContent\Dialog\left_button.xnb
@@ -102,6 +99,7 @@ CatcherContent\Play\score_fix.xnb
 CatcherContent\Play\smoke.xnb
 CatcherContent\StartComic\comic800.xnb
 CatcherContent\TopScore\top_score_back.xnb
+CatcherContent\Dialog\Howtoplay\howtoplay_page1.xnb
 CatcherContent\Play\GameOver\gameover_again.xnb
 CatcherContent\Play\GameOver\gameover_back.xnb
 CatcherContent\Play\GameOver\gameover_menu.xnb

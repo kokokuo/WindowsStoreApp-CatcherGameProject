@@ -206,12 +206,6 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_naughtyboy_intro.xnb">
       <Link>Content\Dialog\Dictionary\dictionary_naughtyboy_intro.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_nicole.xnb">
-      <Link>Content\Dialog\Dictionary\dictionary_nicole.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_nicole_intro.xnb">
-      <Link>Content\Dialog\Dictionary\dictionary_nicole_intro.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Dialog\Dictionary\dictionary_oldman.xnb">
       <Link>Content\Dialog\Dictionary\dictionary_oldman.xnb</Link>
     </Content>

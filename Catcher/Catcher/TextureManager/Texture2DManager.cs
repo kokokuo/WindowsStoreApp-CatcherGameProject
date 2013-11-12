@@ -83,8 +83,6 @@ namespace Catcher.TextureManager
 
             //載入字典對話框所用的圖像資源
             LoadDictionaryDialogBackground();
-            LoadDictionaryDialogNicoleTexture();
-            LoadDictionaryDialogNicoleIntroTexture();
             LoadDictionaryDialogLittleGirlTexture();
             LoadDictionaryDialogLittleGirlIntroTexture();
             LoadDictionaryDialogFatDancerTexture();
@@ -763,18 +761,7 @@ namespace Catcher.TextureManager
 
        
 
-        //字典內容
-        private void LoadDictionaryDialogNicoleIntroTexture()
-        {
-            TexturesKeyEnum key = TexturesKeyEnum.DICTIONARY_NICOLE_INTRO_TEXTURE;
-            if (!_dictionary.ContainsKey(key))
-            {
-                List<Texture2D> texture2Ds = new List<Texture2D>();
-                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Dialog/Dictionary/dictionary_nicole_intro"));
-                _dictionary.Add(key, texture2Ds);
-
-            }
-        }
+        //字典內容  
         private void LoadDictionaryDialogLittleGirlIntroTexture()
         {
             TexturesKeyEnum key = TexturesKeyEnum.DICTIONARY_LITTLEGIRL_INTRO_TEXTURE;
@@ -853,18 +840,6 @@ namespace Catcher.TextureManager
             }
         }
         //字典人物
-        private void LoadDictionaryDialogNicoleTexture()
-        {
-            TexturesKeyEnum key = TexturesKeyEnum.DICTIONARY_NICOLE_TEXTURE;
-            if (!_dictionary.ContainsKey(key))
-            {
-                List<Texture2D> texture2Ds = new List<Texture2D>();
-                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Dialog/Dictionary/dictionary_nicole"));
-                _dictionary.Add(key, texture2Ds);
-
-            }
-        }
-
         private void LoadDictionaryDialogLittleGirlTexture()
         {
             TexturesKeyEnum key = TexturesKeyEnum.DICTIONARY_LITTLEGIRL_TEXTURE;

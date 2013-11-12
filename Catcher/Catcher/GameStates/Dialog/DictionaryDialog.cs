@@ -17,8 +17,6 @@ namespace Catcher.GameStates.Dialog
         Button leftButton;
         Button rightButton;
         //角色
-        TextureLayer nicoleTexture;
-        TextureLayer nicoleIntroTexture;
         TextureLayer littlegirlTexture;
         TextureLayer littlegirlIntroTexture;
         TextureLayer fatdancerTexture;
@@ -44,14 +42,12 @@ namespace Catcher.GameStates.Dialog
         public override void BeginInit()
         {
             roleStart = 1;
-            roleEnd = 8;
+            roleEnd = 7;
             backgroundPos = new Vector2(0, 0);
             closeButton = new Button(base.currentState, base.countId++, 0, 0);
             leftButton = new Button(base.currentState, base.countId++, 0, 0);
             rightButton = new Button(base.currentState, base.countId++, 0, 0);
 
-            nicoleTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
-            nicoleIntroTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
             littlegirlTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
             littlegirlIntroTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
             fatdancerTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
@@ -68,10 +64,9 @@ namespace Catcher.GameStates.Dialog
             roxanneIntroTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
 
             stCurrent = DialogStateEnum.STATE_DICTIONARY;
-            gtCurrent = DialogGameObjectEnum.DICTIONARY_NICOLE;
+            gtCurrent = DialogGameObjectEnum.DICTIONARY_LITTLEGIRL;
 
-            
-            AddgameObject(DialogGameObjectEnum.DICTIONARY_NICOLE,new GameObject[]{nicoleTexture,nicoleIntroTexture,rightButton});
+
             AddgameObject(DialogGameObjectEnum.DICTIONARY_LITTLEGIRL,new GameObject[]{littlegirlTexture,littlegirlIntroTexture,leftButton,rightButton});
             AddgameObject(DialogGameObjectEnum.DICTIONARY_FATDANCER, new GameObject[] { fatdancerTexture, fatdancerIntroTexture ,leftButton,rightButton});
             AddgameObject(DialogGameObjectEnum.DICTIONARY_FLYOLDLADY, new GameObject[] { flyoldladyTexture, flyoldladyIntroTexture ,leftButton,rightButton});
@@ -90,8 +85,6 @@ namespace Catcher.GameStates.Dialog
             background = currentState.GetTexture2DList(TextureManager.TexturesKeyEnum.DICTIONARY_BACKGROUND)[0];
             leftButton.LoadResource(TexturesKeyEnum.DIALOG_LEFT_BUTTON);
             rightButton.LoadResource(TexturesKeyEnum.DIALOG_RIGHT_BUTTON);
-            nicoleTexture.LoadResource(TexturesKeyEnum.DICTIONARY_NICOLE_TEXTURE);
-            nicoleIntroTexture.LoadResource(TexturesKeyEnum.DICTIONARY_NICOLE_INTRO_TEXTURE);
             littlegirlTexture.LoadResource(TexturesKeyEnum.DICTIONARY_LITTLEGIRL_TEXTURE);
             littlegirlIntroTexture.LoadResource(TexturesKeyEnum.DICTIONARY_LITTLEGIRL_INTRO_TEXTURE);
 
@@ -116,8 +109,8 @@ namespace Catcher.GameStates.Dialog
             if (!base.currentState.IsEmptyQueue())
             {
                 stCurrent = DialogStateEnum.STATE_DICTIONARY;
-                if(gtCurrent==DialogGameObjectEnum.EMPTY)
-                gtCurrent = DialogGameObjectEnum.DICTIONARY_NICOLE;
+                if (gtCurrent == DialogGameObjectEnum.EMPTY)
+                    gtCurrent = DialogGameObjectEnum.DICTIONARY_LITTLEGIRL;
 
                 TouchCollection tc = base.currentState.GetCurrentFrameTouchCollection();
                 bool isClickClose = false;
