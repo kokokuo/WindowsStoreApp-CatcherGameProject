@@ -23,19 +23,14 @@ namespace Catcher.GameStates.Dialog
         { 
         }
 
-        async public override void BeginInit()
+        public override void BeginInit()
         {
             backgroundPos = new Vector2(0,0);
             closeButton = new Button(base.currentState, base.countId++, 0, 0);
             AddGameObject(closeButton);
             topSavedPeoepleNumber = 0;
 
-            var file = await StorageHelper.ReadTextFromFile("record.catcher");
-            if (!String.IsNullOrEmpty(file))
-            {
-                readData = JsonHelper.Deserialize<GameRecordData>(file);
-                topSavedPeoepleNumber = readData.SavePeopleNumber;
-            }
+            
 
             base.isInit = true;
         }
@@ -47,8 +42,15 @@ namespace Catcher.GameStates.Dialog
             base.LoadResource(); //載入CloseButton 圖片資源
             base.isLoadContent = true;
         }
-        public override void Update()
+        async public override void Update()
         {
+            var file = await StorageHelper.ReadTextFromFile("record.catcher");
+            if (!String.IsNullOrEmpty(file))
+            {
+                readData = JsonHelper.Deserialize<GameRecordData>(file);
+                topSavedPeoepleNumber = readData.SavePeopleNumber;
+            }
+
             TouchCollection tc = base.currentState.GetCurrentFrameTouchCollection();
             bool isClickClose = false;
             if (tc.Count > 0){
@@ -77,7 +79,7 @@ namespace Catcher.GameStates.Dialog
         public override void Draw()
         {
             gameSateSpriteBatch.Draw(background, backgroundPos, Color.White);
-            gameSateSpriteBatch.DrawString(topSavedPeopleNumberFont, topSavedPeoepleNumber.ToString(), new Vector2(background.Width / 2, background.Height / 2), Color.Black);
+            gameSateSpriteBatch.DrawString(topSavedPeopleNumberFont, topSavedPeoepleNumber.ToString() + "\nPeople", new Vector2(background.Width / 2, background.Height / 2 - topSavedPeopleNumberFont.MeasureString(topSavedPeoepleNumber.ToString()).Y / 2), Color.Black);
             base.Draw(); //繪製遊戲元件
         }
     }
