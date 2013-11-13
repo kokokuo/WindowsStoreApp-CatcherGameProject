@@ -38,6 +38,7 @@ namespace Catcher.GameObjects
         //被接到的道具
         LinkedList<EffectItem> caughtEffectItem;
         EffectState state;
+        List<DropObjectsKeyEnum> caughtCreaturesKey; 
         public FiremanPlayer(GameState currentGameState, int id, float x, float y)
             : base(currentGameState, id, x, y)
         {
@@ -49,6 +50,8 @@ namespace Catcher.GameObjects
              savedNet.AddSavedPerson += savedNet_AddSavedPerson;
              savedNet.CaughtEffectItems += savedNet_CaughtEffectItems;
              savedNet.LoadResource(TexturesKeyEnum.PLAY_NET);
+
+             caughtCreaturesKey = new List<DropObjectsKeyEnum>();
         }
         
         private void savedNet_CaughtEffectItems(EffectItem item)
@@ -154,14 +157,35 @@ namespace Catcher.GameObjects
         /// <summary>
         /// 累加新的Person
         /// </summary>
-        private  void savedNet_AddSavedPerson()
+        private  void savedNet_AddSavedPerson(DropObjects obj)
         {
             savePeopleNumber++;
+            //判斷有無接到此Key有的話則不再放入
+            if (obj is Creature) {
+                bool isFind = false;
+                    foreach(DropObjectsKeyEnum caughtObjKey in caughtCreaturesKey){
+                        if(caughtObjKey == obj.GetKeyEnum()){
+                            isFind = true;
+                            break;
+                        }
+                    }
+                   if(!isFind)
+                       caughtCreaturesKey.Add(obj.GetKeyEnum());
+            }
+                
+            
             //觸發事件
             if (SaveNewPerson != null)
             {
                 SaveNewPerson.Invoke(savePeopleNumber);
             }
+        }
+        /// <summary>
+        /// 取得接到的角色
+        /// </summary>
+        /// <returns></returns>
+        public List<DropObjectsKeyEnum> GetCaughtKey() {
+            return caughtCreaturesKey;
         }
 
         protected override void Init()

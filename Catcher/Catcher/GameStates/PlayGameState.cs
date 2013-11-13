@@ -276,6 +276,7 @@ namespace Catcher.GameStates
                     //紀錄檔案
                     GameRecordData data = new GameRecordData();
                     data.SavePeopleNumber = savedPeopleNumber;
+                    data.CaughtDropObjects = player.GetCaughtKey();
                     if (!isWriteingFile)
                     {
                         try

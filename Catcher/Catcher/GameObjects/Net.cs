@@ -15,7 +15,7 @@ using Catcher.Sprite;
 using System.Diagnostics;
 namespace Catcher.GameObjects
 {
-    public  delegate void ValueAddedEventHandler();
+    public  delegate void ValueAddedEventHandler(DropObjects obj);
     
    
     //網子類別
@@ -111,7 +111,7 @@ namespace Catcher.GameObjects
                         {
                             //累加拯救到的人數
                             if (AddSavedPerson != null) {
-                                AddSavedPerson.Invoke();
+                                AddSavedPerson.Invoke(obj);
                             }
                         }
                         else if (obj is EffectItem) {  //是道具的話
