@@ -254,15 +254,6 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Menu\top.xnb">
       <Link>Content\Menu\top.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Pause\continue.xnb">
-      <Link>Content\Pause\continue.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Pause\exit.xnb">
-      <Link>Content\Pause\exit.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Pause\pause_back.xnb">
-      <Link>Content\Pause\pause_back.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\die.xnb">
       <Link>Content\Play\die.xnb</Link>
     </Content>
@@ -473,6 +464,9 @@
     <Content Include="Content\Play\pause.xnb" />
     <Content Include="Content\Play\right_button.xnb" />
     <Content Include="Content\Play\smoke.xnb" />
+    <Content Include="Content\Pause\continue.xnb" />
+    <Content Include="Content\Pause\exit.xnb" />
+    <Content Include="Content\Pause\pause_back.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />
