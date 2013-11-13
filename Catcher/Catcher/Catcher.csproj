@@ -260,48 +260,6 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\die_2.xnb">
       <Link>Content\Play\die_2.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancercaught1.xnb">
-      <Link>Content\Play\fatdance\fatdancercaught1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancercaught2.xnb">
-      <Link>Content\Play\fatdance\fatdancercaught2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerfall1.xnb">
-      <Link>Content\Play\fatdance\fatdancerfall1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerfall2.xnb">
-      <Link>Content\Play\fatdance\fatdancerfall2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerfloor.xnb">
-      <Link>Content\Play\fatdance\fatdancerfloor.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerrun1.xnb">
-      <Link>Content\Play\fatdance\fatdancerrun1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\fatdance\fatdancerrun2.xnb">
-      <Link>Content\Play\fatdance\fatdancerrun2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_caught.xnb">
-      <Link>Content\Play\flyoldlady\flyoldlady_caught.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_fall1.xnb">
-      <Link>Content\Play\flyoldlady\flyoldlady_fall1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_fall2.xnb">
-      <Link>Content\Play\flyoldlady\flyoldlady_fall2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_fall3.xnb">
-      <Link>Content\Play\flyoldlady\flyoldlady_fall3.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_floor.xnb">
-      <Link>Content\Play\flyoldlady\flyoldlady_floor.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_run1.xnb">
-      <Link>Content\Play\flyoldlady\flyoldlady_run1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\flyoldlady\flyoldlady_run2.xnb">
-      <Link>Content\Play\flyoldlady\flyoldlady_run2.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\boosting_shoes.xnb">
       <Link>Content\Play\Item\boosting_shoes.xnb</Link>
     </Content>
@@ -326,107 +284,8 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\life_fix.xnb">
       <Link>Content\Play\life_fix.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlfall1.xnb">
-      <Link>Content\Play\littlegirl\littlegirlfall1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlfall2.xnb">
-      <Link>Content\Play\littlegirl\littlegirlfall2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlhavecaught.xnb">
-      <Link>Content\Play\littlegirl\littlegirlhavecaught.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlrun1.xnb">
-      <Link>Content\Play\littlegirl\littlegirlrun1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlrun2.xnb">
-      <Link>Content\Play\littlegirl\littlegirlrun2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\littlegirl\littlegirlrun3.xnb">
-      <Link>Content\Play\littlegirl\littlegirlrun3.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblefall1.xnb">
-      <Link>Content\Play\manstubble\manstubblefall1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblefall2.xnb">
-      <Link>Content\Play\manstubble\manstubblefall2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblehavecaught.xnb">
-      <Link>Content\Play\manstubble\manstubblehavecaught.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblerun1.xnb">
-      <Link>Content\Play\manstubble\manstubblerun1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblerun2.xnb">
-      <Link>Content\Play\manstubble\manstubblerun2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\manstubble\manstubblerun3.xnb">
-      <Link>Content\Play\manstubble\manstubblerun3.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_caught.xnb">
-      <Link>Content\Play\naughtyboy\naughtyboy_caught.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_fall1.xnb">
-      <Link>Content\Play\naughtyboy\naughtyboy_fall1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_fall2.xnb">
-      <Link>Content\Play\naughtyboy\naughtyboy_fall2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_floor.xnb">
-      <Link>Content\Play\naughtyboy\naughtyboy_floor.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_run1.xnb">
-      <Link>Content\Play\naughtyboy\naughtyboy_run1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_run2.xnb">
-      <Link>Content\Play\naughtyboy\naughtyboy_run2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\naughtyboy\naughtyboy_run3.xnb">
-      <Link>Content\Play\naughtyboy\naughtyboy_run3.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmancaught.xnb">
-      <Link>Content\Play\oldman\oldmancaught.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanfall1.xnb">
-      <Link>Content\Play\oldman\oldmanfall1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanfall2.xnb">
-      <Link>Content\Play\oldman\oldmanfall2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanfloor.xnb">
-      <Link>Content\Play\oldman\oldmanfloor.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanrun1.xnb">
-      <Link>Content\Play\oldman\oldmanrun1.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanrun2.xnb">
-      <Link>Content\Play\oldman\oldmanrun2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\oldman\oldmanrun3.xnb">
-      <Link>Content\Play\oldman\oldmanrun3.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\pause_bigger.xnb">
       <Link>Content\Play\pause_bigger.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxannefall.xnb">
-      <Link>Content\Play\roxanne\roxannefall.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxannefall2.xnb">
-      <Link>Content\Play\roxanne\roxannefall2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxannehave_caught.xnb">
-      <Link>Content\Play\roxanne\roxannehave_caught.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxanne_floor.xnb">
-      <Link>Content\Play\roxanne\roxanne_floor.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxanne_floor2.xnb">
-      <Link>Content\Play\roxanne\roxanne_floor2.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxanne_floor3.xnb">
-      <Link>Content\Play\roxanne\roxanne_floor3.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\roxanne\roxanne_run.xnb">
-      <Link>Content\Play\roxanne\roxanne_run.xnb</Link>
     </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\score.xnb">
       <Link>Content\Play\score.xnb</Link>
@@ -467,6 +326,53 @@
     <Content Include="Content\Pause\continue.xnb" />
     <Content Include="Content\Pause\exit.xnb" />
     <Content Include="Content\Pause\pause_back.xnb" />
+    <Content Include="Content\Play\fatdance\fatdancercaught1.xnb" />
+    <Content Include="Content\Play\fatdance\fatdancercaught2.xnb" />
+    <Content Include="Content\Play\fatdance\fatdancerfall1.xnb" />
+    <Content Include="Content\Play\fatdance\fatdancerfall2.xnb" />
+    <Content Include="Content\Play\fatdance\fatdancerfloor.xnb" />
+    <Content Include="Content\Play\fatdance\fatdancerrun1.xnb" />
+    <Content Include="Content\Play\fatdance\fatdancerrun2.xnb" />
+    <Content Include="Content\Play\flyoldlady\flyoldlady_caught.xnb" />
+    <Content Include="Content\Play\flyoldlady\flyoldlady_fall1.xnb" />
+    <Content Include="Content\Play\flyoldlady\flyoldlady_fall2.xnb" />
+    <Content Include="Content\Play\flyoldlady\flyoldlady_fall3.xnb" />
+    <Content Include="Content\Play\flyoldlady\flyoldlady_floor.xnb" />
+    <Content Include="Content\Play\flyoldlady\flyoldlady_run1.xnb" />
+    <Content Include="Content\Play\flyoldlady\flyoldlady_run2.xnb" />
+    <Content Include="Content\Play\littlegirl\littlegirlfall1.xnb" />
+    <Content Include="Content\Play\littlegirl\littlegirlfall2.xnb" />
+    <Content Include="Content\Play\littlegirl\littlegirlhavecaught.xnb" />
+    <Content Include="Content\Play\littlegirl\littlegirlrun1.xnb" />
+    <Content Include="Content\Play\littlegirl\littlegirlrun2.xnb" />
+    <Content Include="Content\Play\littlegirl\littlegirlrun3.xnb" />
+    <Content Include="Content\Play\manstubble\manstubblefall1.xnb" />
+    <Content Include="Content\Play\manstubble\manstubblefall2.xnb" />
+    <Content Include="Content\Play\manstubble\manstubblehavecaught.xnb" />
+    <Content Include="Content\Play\manstubble\manstubblerun1.xnb" />
+    <Content Include="Content\Play\manstubble\manstubblerun2.xnb" />
+    <Content Include="Content\Play\manstubble\manstubblerun3.xnb" />
+    <Content Include="Content\Play\naughtyboy\naughtyboy_caught.xnb" />
+    <Content Include="Content\Play\naughtyboy\naughtyboy_fall1.xnb" />
+    <Content Include="Content\Play\naughtyboy\naughtyboy_fall2.xnb" />
+    <Content Include="Content\Play\naughtyboy\naughtyboy_floor.xnb" />
+    <Content Include="Content\Play\naughtyboy\naughtyboy_run1.xnb" />
+    <Content Include="Content\Play\naughtyboy\naughtyboy_run2.xnb" />
+    <Content Include="Content\Play\naughtyboy\naughtyboy_run3.xnb" />
+    <Content Include="Content\Play\oldman\oldmancaught.xnb" />
+    <Content Include="Content\Play\oldman\oldmanfall1.xnb" />
+    <Content Include="Content\Play\oldman\oldmanfall2.xnb" />
+    <Content Include="Content\Play\oldman\oldmanfloor.xnb" />
+    <Content Include="Content\Play\oldman\oldmanrun1.xnb" />
+    <Content Include="Content\Play\oldman\oldmanrun2.xnb" />
+    <Content Include="Content\Play\oldman\oldmanrun3.xnb" />
+    <Content Include="Content\Play\roxanne\roxannefall.xnb" />
+    <Content Include="Content\Play\roxanne\roxannefall2.xnb" />
+    <Content Include="Content\Play\roxanne\roxannehave_caught.xnb" />
+    <Content Include="Content\Play\roxanne\roxanne_floor.xnb" />
+    <Content Include="Content\Play\roxanne\roxanne_floor2.xnb" />
+    <Content Include="Content\Play\roxanne\roxanne_floor3.xnb" />
+    <Content Include="Content\Play\roxanne\roxanne_run.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />
