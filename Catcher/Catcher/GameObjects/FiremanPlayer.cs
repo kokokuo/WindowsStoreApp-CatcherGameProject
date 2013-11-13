@@ -46,7 +46,7 @@ namespace Catcher.GameObjects
             //取得網子
 
             //數值待解決(改為依裝置吃尺寸去調整)
-             savedNet = new Net(currentGameState, id, x + 73, y + 85, this);
+             savedNet = new Net(currentGameState, id, x + 162, y + 186, this);
              savedNet.AddSavedPerson += savedNet_AddSavedPerson;
              savedNet.CaughtEffectItems += savedNet_CaughtEffectItems;
              savedNet.LoadResource(TexturesKeyEnum.PLAY_NET);
