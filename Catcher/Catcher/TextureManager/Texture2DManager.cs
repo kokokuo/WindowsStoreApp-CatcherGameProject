@@ -47,6 +47,7 @@ namespace Catcher.TextureManager
 
             //載入遊戲中的資源
             LoadPlayBackground();
+            LoadPlayFloor();
             LoadPlayGamePauseButton();
             LoadPlayGameLeftMoveButton();
             LoadPlayGameRightMoveButton();
@@ -270,7 +271,18 @@ namespace Catcher.TextureManager
             }
         
         }
+        //遊戲中的背景
+        private void LoadPlayFloor()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.PLAY_FLOOR;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Play/floor"));
+                _dictionary.Add(key, texture2Ds);
+            }
 
+        }
         //遊戲中的煙霧
         private void LoadPlayGameSmokePicture() {
             TexturesKeyEnum key = TexturesKeyEnum.PLAY_SMOKE;

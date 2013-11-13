@@ -18,15 +18,15 @@ namespace Catcher.GameStates
 {
     public class PlayGameState  :GameState
     {
-        const int FIREMAN_INIT_X = 300;
-        const int FIREMAN_INIT_Y = 355;
-        const int RIGHT_MOVE_BUTTON_X_POS = 700;
-        const int LEFT_MOVE_BUTTON_X_POS = 0;
-        const int MOVE_BUTTON_Y_POS = 355;
-        const int LIFE_X = 710;
-        const int LIFE_Y = 20;
-        const int SCORE_X = 15;
-        const int SCORE_Y = 95;
+        int FIREMAN_INIT_X ;
+        int FIREMAN_INIT_Y ;
+        int RIGHT_MOVE_BUTTON_X_POS = 700;
+        int LEFT_MOVE_BUTTON_X_POS = 0;
+        int MOVE_BUTTON_Y_POS = 355;
+        int LIFE_X = 710;
+        int LIFE_Y = 20;
+        int SCORE_X = 15;
+        int SCORE_Y = 95;
         float savedPeoplefontX;
         float savedPeoplefontY;
         float lifefontX;
@@ -50,6 +50,7 @@ namespace Catcher.GameStates
         TextureLayer smokeTexture;
         TextureLayer lifeTexture;
         TextureLayer scoreTexture;
+        TextureLayer floorTexture;
         //掉落的物件 (角色與道具)
         List<DropObjects> fallingObjects;
        
@@ -66,13 +67,26 @@ namespace Catcher.GameStates
             base.x = 0; base.y = 0;
             base.backgroundPos = new Vector2(base.x, base.y);
 
-          
+           
         }
 
         
 
         public override void BeginInit()
         {
+            int player_x = base.GetDeviceScreenWidthByMainGame() / 2 - base.GetTexture2DList(TexturesKeyEnum.PLAY_FIREMAN)[0].Width / 2;
+            int player_y = base.GetDeviceScreenHeightByMainGame() - base.GetTexture2DList(TexturesKeyEnum.PLAY_FLOOR)[0].Height / 2 - base.GetTexture2DList(TexturesKeyEnum.PLAY_FIREMAN)[0].Height;
+            FIREMAN_INIT_X = player_x;
+            FIREMAN_INIT_Y = player_y;
+            RIGHT_MOVE_BUTTON_X_POS = base.GetDeviceScreenWidthByMainGame() - base.GetTexture2DList(TexturesKeyEnum.PLAY_RIGHT_MOVE_BUTTON)[0].Width -50;
+            LEFT_MOVE_BUTTON_X_POS = 50;
+            MOVE_BUTTON_Y_POS = base.GetDeviceScreenHeightByMainGame() - base.GetTexture2DList(TexturesKeyEnum.PLAY_FLOOR)[0].Height / 2 -base.GetTexture2DList(TexturesKeyEnum.PLAY_RIGHT_MOVE_BUTTON)[0].Height;
+            LIFE_X = 710;
+            LIFE_Y = 20;
+            SCORE_X = 15;
+            SCORE_Y = 95;
+
+
             //設定消防員的移動邊界(包含角色掉落的邊界也算在內)
             base.rightGameScreenBorder = RIGHT_MOVE_BUTTON_X_POS;
             base.leftGameScreenBorder = base.GetTexture2DList(TexturesKeyEnum.PLAY_LEFT_MOVE_BUTTON)[0].Width;
@@ -96,6 +110,8 @@ namespace Catcher.GameStates
             lifeTexture = new TextureLayer(this, objIdCount++, LIFE_X, LIFE_Y);
             scoreTexture = new TextureLayer(this, objIdCount++, SCORE_X, SCORE_Y);
             
+            int floor_y = base.GetDeviceScreenHeightByMainGame() - base.GetTexture2DList(TexturesKeyEnum.PLAY_FLOOR)[0].Height;
+            floorTexture = new TextureLayer(this, objIdCount++, 0, floor_y);
 
             //加入遊戲元件
             AddGameObject(player);
@@ -152,6 +168,7 @@ namespace Catcher.GameStates
             smokeTexture.Dispose();
             lifeTexture.Dispose();
             scoreTexture.Dispose();
+            floorTexture.Dispose();
             willRemoveObjectId.Clear();
             //指向NULL
             savedPeopleNumberFont = null;
@@ -195,7 +212,7 @@ namespace Catcher.GameStates
             smokeTexture.LoadResource(TexturesKeyEnum.PLAY_SMOKE);
             lifeTexture.LoadResource(TexturesKeyEnum.PLAY_LIFE);
             scoreTexture.LoadResource(TexturesKeyEnum.PLAY_SCORE);
-        
+            floorTexture.LoadResource(TexturesKeyEnum.PLAY_FLOOR);
 
             
             //載入對話框的圖片資源
@@ -286,8 +303,10 @@ namespace Catcher.GameStates
                         catch { }
                         isWriteingFile = true;
                     }
+                    this.Release();
                     //切換狀態
                     base.SetNextGameSateByMain(GameStateEnum.STATE_GAME_OVER);
+                    
                 }
             }
             base.Update();
@@ -296,6 +315,7 @@ namespace Catcher.GameStates
         {
             // 繪製主頁背景
             gameSateSpriteBatch.Draw(base.background, base.backgroundPos, Color.White);
+            floorTexture.Draw(this.GetSpriteBatch());
             base.Draw();
             smokeTexture.Draw(this.GetSpriteBatch());
             lifeTexture.Draw(this.GetSpriteBatch());

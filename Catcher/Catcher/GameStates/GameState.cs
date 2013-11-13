@@ -81,8 +81,8 @@ namespace Catcher.GameStates
             this.mainGame = mainGamePointer;
             
             isInit = false;
-            width = 800;
-            height = 480;
+            width = mainGame.GetDeviceScreenWidth();
+            height = mainGame.GetDeviceScreenHeight() ;
             hasDialogShow = false;
         }
         
@@ -282,6 +282,16 @@ namespace Catcher.GameStates
         public void ClearTouchQueue()
         {
             mainGame.ClearTouchQueue();
+        }
+
+
+        public int GetDeviceScreenWidthByMainGame()
+        {
+            return mainGame.GetDeviceScreenWidth();
+        }
+        public int GetDeviceScreenHeightByMainGame()
+        {
+            return mainGame.GetDeviceScreenHeight();
         }
     }
 }

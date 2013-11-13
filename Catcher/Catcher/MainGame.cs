@@ -207,5 +207,13 @@ namespace Catcher
             }
 
         }
+
+        public int GetDeviceScreenWidth() {
+            return _graphics.PreferredBackBufferWidth;
+        }
+        public int GetDeviceScreenHeight()
+        {
+            return _graphics.PreferredBackBufferHeight;
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace Catcher.TextureManager
 
         //PALY GAME----------------------------
         PLAY_BACKGROUND,
+        PLAY_FLOOR,
         PLAY_FIREMAN,
         PLAY_LEFT_MOVE_BUTTON,
         PLAY_RIGHT_MOVE_BUTTON,
