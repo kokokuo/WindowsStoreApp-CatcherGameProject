@@ -260,17 +260,8 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\die_2.xnb">
       <Link>Content\Play\die_2.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\life.xnb">
-      <Link>Content\Play\life.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\life_fix.xnb">
       <Link>Content\Play\life_fix.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\pause_bigger.xnb">
-      <Link>Content\Play\pause_bigger.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\score.xnb">
-      <Link>Content\Play\score.xnb</Link>
     </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\score_fix.xnb">
       <Link>Content\Play\score_fix.xnb</Link>
@@ -280,6 +271,9 @@
     </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\TopScoreFont.xnb">
       <Link>Content\TopScoreFont.xnb</Link>
+    </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\pause.xnb">
+      <Link>Content\Play\pause.xnb</Link>
     </Content>
     <None Include="Catcher_TemporaryKey.pfx" />
     <Content Include="Content\Dialog\left_button.xnb" />
@@ -302,7 +296,6 @@
     <Content Include="Content\Play\left_button.xnb" />
     <Content Include="Content\Play\net1.xnb" />
     <Content Include="Content\Play\net2.xnb" />
-    <Content Include="Content\Play\pause.xnb" />
     <Content Include="Content\Play\right_button.xnb" />
     <Content Include="Content\Play\smoke.xnb" />
     <Content Include="Content\Pause\continue.xnb" />

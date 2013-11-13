@@ -38,7 +38,6 @@ CatcherContent\Play\Item\Net expander.xnb
 CatcherContent\Play\Item\Net shrinker.xnb
 CatcherContent\Play\Item\slow.xnb
 CatcherContent\Play\left_button.xnb
-CatcherContent\Play\life.xnb
 CatcherContent\Play\life_fix.xnb
 CatcherContent\Play\littlegirl\littlegirlfall1.xnb
 CatcherContent\Play\littlegirl\littlegirlfall2.xnb
@@ -69,7 +68,6 @@ CatcherContent\Play\oldman\oldmanrun1.xnb
 CatcherContent\Play\oldman\oldmanrun2.xnb
 CatcherContent\Play\oldman\oldmanrun3.xnb
 CatcherContent\Play\pause.xnb
-CatcherContent\Play\pause_bigger.xnb
 CatcherContent\Play\right_button.xnb
 CatcherContent\Play\roxanne\roxannefall.xnb
 CatcherContent\Play\roxanne\roxannefall2.xnb
@@ -78,7 +76,6 @@ CatcherContent\Play\roxanne\roxanne_floor.xnb
 CatcherContent\Play\roxanne\roxanne_floor2.xnb
 CatcherContent\Play\roxanne\roxanne_floor3.xnb
 CatcherContent\Play\roxanne\roxanne_run.xnb
-CatcherContent\Play\score.xnb
 CatcherContent\Play\score_fix.xnb
 CatcherContent\Play\smoke.xnb
 CatcherContent\TopScore\top_score_back.xnb

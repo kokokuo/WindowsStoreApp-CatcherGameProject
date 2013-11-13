@@ -243,11 +243,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Play\life.png">
-      <Name>life</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Play\life_fix.png">
       <Name>life_fix</Name>
       <Importer>TextureImporter</Importer>
@@ -398,11 +393,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Play\pause_bigger.png">
-      <Name>pause_bigger</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Play\right_button.png">
       <Name>right_button</Name>
       <Importer>TextureImporter</Importer>
@@ -440,11 +430,6 @@
     </Compile>
     <Compile Include="Play\roxanne\roxanne_run.png">
       <Name>roxanne_run</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Play\score.png">
-      <Name>score</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

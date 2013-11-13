@@ -81,10 +81,10 @@ namespace Catcher.GameStates
             RIGHT_MOVE_BUTTON_X_POS = base.GetDeviceScreenWidthByMainGame() - base.GetTexture2DList(TexturesKeyEnum.PLAY_RIGHT_MOVE_BUTTON)[0].Width -50;
             LEFT_MOVE_BUTTON_X_POS = 50;
             MOVE_BUTTON_Y_POS = base.GetDeviceScreenHeightByMainGame() - base.GetTexture2DList(TexturesKeyEnum.PLAY_FLOOR)[0].Height / 2 -base.GetTexture2DList(TexturesKeyEnum.PLAY_RIGHT_MOVE_BUTTON)[0].Height;
-            LIFE_X = 710;
+            LIFE_X = base.GetDeviceScreenWidthByMainGame() - base.GetTexture2DList(TexturesKeyEnum.PLAY_LIFE)[0].Width - 70;
             LIFE_Y = 20;
-            SCORE_X = 15;
-            SCORE_Y = 95;
+            SCORE_X = 50;
+            SCORE_Y = base.GetTexture2DList(TexturesKeyEnum.PLAY_PAUSE_BUTTON)[0].Height;
 
 
             //設定消防員的移動邊界(包含角色掉落的邊界也算在內)
@@ -116,9 +116,7 @@ namespace Catcher.GameStates
             //加入遊戲元件
             AddGameObject(player);
             
-            AddGameObject(leftMoveButton);
-            AddGameObject(rightMoveButton);
-            AddGameObject(pauseButton);
+           
 
             //啟動第一次隨機功能取得掉落角色
             List<DropObjects> generateObjs =  randSys.WorkCreatureRandom();
@@ -142,6 +140,11 @@ namespace Catcher.GameStates
           
             //訂閱事件
             randSys.GenerateDropObjs += randSys_GenerateDropObjs;
+
+            //加入圖層
+            AddGameObject(leftMoveButton);
+            AddGameObject(rightMoveButton);
+            AddGameObject(pauseButton);
 
             //對 對話框做初始化
             foreach (KeyValuePair<DialogStateEnum, GameDialog> dialog in dialogTable)
@@ -323,9 +326,9 @@ namespace Catcher.GameStates
             //繪製文字資源
             //座標位置以調整為依照圖片之間的位置距離去設定,帶有待調整
             //
-            savedPeoplefontX = ((SCORE_X + scoreTexture.Width)/2) - savedPeopleNumberFont.MeasureString(savedPeopleNumber.ToString()).X/2;
+            savedPeoplefontX = ((SCORE_X + scoreTexture.Width)/2) - savedPeopleNumberFont.MeasureString(savedPeopleNumber.ToString()).X/2 +5;
             savedPeoplefontY = ((SCORE_Y + scoreTexture.Height)/2) + savedPeopleNumberFont.MeasureString(savedPeopleNumber.ToString()).Y/2 - 10;
-            lifefontX = LIFE_X + lifeTexture.Width;
+            lifefontX = LIFE_X + lifeTexture.Width -5;
             lifefontY = LIFE_Y - 10; //微修正
             gameSateSpriteBatch.DrawString(savedPeopleNumberFont, savedPeopleNumber.ToString(), new Vector2(savedPeoplefontX, savedPeoplefontY), Color.White);
             gameSateSpriteBatch.DrawString(lostPeopleNumberFont, lostPeopleNumber.ToString(), new Vector2(lifefontX, lifefontY), Color.White);
