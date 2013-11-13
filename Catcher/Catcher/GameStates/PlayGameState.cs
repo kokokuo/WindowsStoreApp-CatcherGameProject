@@ -238,9 +238,59 @@ namespace Catcher.GameStates
             }
         }
 
+        async private void SaveData() {
+            GameRecordData readData;
+            //紀錄檔案
+            GameRecordData saveData = new GameRecordData();
+            var file = await StorageHelper.ReadTextFromFile("record.catcher");
+            if (!String.IsNullOrEmpty(file))
+            {
+                readData = JsonHelper.Deserialize<GameRecordData>(file);
+            }
+            else{
+                readData = null;
+            }
+            //與舊資料作判斷
+            if (readData != null){
+                if (readData.SavePeopleNumber < savedPeopleNumber){
+                    saveData.SavePeopleNumber = savedPeopleNumber;
+                }
+                else {
+                    saveData.SavePeopleNumber = readData.SavePeopleNumber;
+                }
+                //check檔案中使否影經擁有角色
+                foreach(DropObjectsKeyEnum getkey in   player.GetCaughtKey()){
+                    bool isGot = false; 
+                    foreach(DropObjectsKeyEnum key in  readData.CaughtDropObjects){
+                        if(getkey == key){
+                            isGot = true; 
+                            break;
+                        }
+                    }
+                    if(!isGot){ //如果沒有拿到過 先放到舊資料中
+                         readData.CaughtDropObjects.Add(getkey);
+                    }
+                }
+                //一次把舊資料放到存檔區
+                saveData.CaughtDropObjects = readData.CaughtDropObjects;
+            }
+            else{ //如果沒有資料
+                saveData.SavePeopleNumber = savedPeopleNumber;
+                saveData.CaughtDropObjects = player.GetCaughtKey();
+            }
+            
+            if (!isWriteingFile)
+            {
+                try
+                {
+                    await StorageHelper.SaveTextToFile("record.catcher", JsonHelper.Serialize<GameRecordData>(saveData));
+                }
+                catch { }
+                isWriteingFile = true;
+            }
+        }
 
-
-        async public override void Update()
+       public override void Update()
         {
             //如果沒有談出對話框->處理遊戲邏輯
             if (!base.hasDialogShow)
@@ -293,19 +343,7 @@ namespace Catcher.GameStates
                 
                 //切換到遊戲結束的畫面
                 if (isOver) {
-                    //紀錄檔案
-                    GameRecordData data = new GameRecordData();
-                    data.SavePeopleNumber = savedPeopleNumber;
-                    data.CaughtDropObjects = player.GetCaughtKey();
-                    if (!isWriteingFile)
-                    {
-                        try
-                        {
-                            await StorageHelper.SaveTextToFile("record.catcher", JsonHelper.Serialize<GameRecordData>(data));
-                        }
-                        catch { }
-                        isWriteingFile = true;
-                    }
+                    SaveData();
                     this.Release();
                     //切換狀態
                     base.SetNextGameSateByMain(GameStateEnum.STATE_GAME_OVER);
@@ -332,8 +370,10 @@ namespace Catcher.GameStates
             lifefontY = LIFE_Y - 10; //微修正
             gameSateSpriteBatch.DrawString(savedPeopleNumberFont, savedPeopleNumber.ToString(), new Vector2(savedPeoplefontX, savedPeoplefontY), Color.White);
             gameSateSpriteBatch.DrawString(lostPeopleNumberFont, lostPeopleNumber.ToString(), new Vector2(lifefontX, lifefontY), Color.White);
-        }
 
+          
+        }
+        
 
         /// <summary>
         /// 將 id 放入準備要被刪除的 list

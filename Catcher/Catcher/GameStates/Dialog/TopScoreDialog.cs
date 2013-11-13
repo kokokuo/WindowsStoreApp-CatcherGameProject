@@ -17,7 +17,8 @@ namespace Catcher.GameStates.Dialog
     {
         SpriteFont topSavedPeopleNumberFont;
         GameRecordData readData;
-        int topSavedPeoepleNumber;
+        string topSavedPeoepleNumber;
+        
         public TopScoreDialog(GameState pCurrentState)
             : base(pCurrentState) 
         { 
@@ -28,7 +29,7 @@ namespace Catcher.GameStates.Dialog
             backgroundPos = new Vector2(0,0);
             closeButton = new Button(base.currentState, base.countId++, 0, 0);
             AddGameObject(closeButton);
-            topSavedPeoepleNumber = 0;
+            topSavedPeoepleNumber = "Not Saved";
             //讀取紀錄檔
             Readcored();
             
@@ -76,18 +77,22 @@ namespace Catcher.GameStates.Dialog
         public override void Draw()
         {
             gameSateSpriteBatch.Draw(background, backgroundPos, Color.White);
-            gameSateSpriteBatch.DrawString(topSavedPeopleNumberFont, topSavedPeoepleNumber.ToString() + "\nPeople", new Vector2(background.Width / 2, background.Height / 2 - topSavedPeopleNumberFont.MeasureString(topSavedPeoepleNumber.ToString()).Y / 2), Color.Black);
+            gameSateSpriteBatch.DrawString(topSavedPeopleNumberFont, topSavedPeoepleNumber.ToString(), new Vector2(background.Width / 2, background.Height / 2 - topSavedPeopleNumberFont.MeasureString(topSavedPeoepleNumber.ToString()).Y / 2), Color.Black);
             base.Draw(); //繪製遊戲元件
         }
 
         public async void Readcored()
         {
+          
             var file = await StorageHelper.ReadTextFromFile("record.catcher");
             if (!String.IsNullOrEmpty(file))
             {
                 readData = JsonHelper.Deserialize<GameRecordData>(file);
-                topSavedPeoepleNumber = readData.SavePeopleNumber;
+                topSavedPeoepleNumber = readData.SavePeopleNumber.ToString() + "\nPeople";
+                    
             }
+                
+          
         }
 
     }
