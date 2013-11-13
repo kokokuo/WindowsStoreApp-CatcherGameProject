@@ -208,6 +208,8 @@ namespace Catcher
 
         }
 
+
+
         public int GetDeviceScreenWidth() {
             return _graphics.PreferredBackBufferWidth;
         }

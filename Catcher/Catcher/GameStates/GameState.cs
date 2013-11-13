@@ -264,6 +264,7 @@ namespace Catcher.GameStates
             this.mainGame.SetNextGameState(key);
         }
 
+
         /// <summary>
         /// 取得文字資源
         /// </summary>

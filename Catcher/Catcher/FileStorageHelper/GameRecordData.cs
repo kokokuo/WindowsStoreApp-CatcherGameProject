@@ -13,11 +13,14 @@ namespace Catcher.FileStorageHelper
     public class GameRecordData
     {
         [DataMember]
-        public int SavePeopleNumber { get; set; }
+        public int HistoryTopSavedNumber { get; set; }
 
         List<DropObjectsKeyEnum> caughtObjects;
 
         [DataMember]
         public List<DropObjectsKeyEnum> CaughtDropObjects { get; set; }
+
+        [DataMember]
+        public int CurrentSavePeopleNumber { get; set; }
     }
 }

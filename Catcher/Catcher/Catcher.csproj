@@ -275,6 +275,9 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\pause.xnb">
       <Link>Content\Play\pause.xnb</Link>
     </Content>
+    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\CurrentScoreFont.xnb">
+      <Link>Content\CurrentScoreFont.xnb</Link>
+    </Content>
     <None Include="Catcher_TemporaryKey.pfx" />
     <Content Include="Content\Dialog\left_button.xnb" />
     <Content Include="Content\Dialog\right_button.xnb" />

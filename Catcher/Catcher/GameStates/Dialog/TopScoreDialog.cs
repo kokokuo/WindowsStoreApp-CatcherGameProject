@@ -88,7 +88,7 @@ namespace Catcher.GameStates.Dialog
             if (!String.IsNullOrEmpty(file))
             {
                 readData = JsonHelper.Deserialize<GameRecordData>(file);
-                topSavedPeoepleNumber = readData.SavePeopleNumber.ToString() + "\nPeople";
+                topSavedPeoepleNumber = readData.HistoryTopSavedNumber.ToString() + "\nPeople";
                     
             }
                 

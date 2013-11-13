@@ -252,11 +252,11 @@ namespace Catcher.GameStates
             }
             //與舊資料作判斷
             if (readData != null){
-                if (readData.SavePeopleNumber < savedPeopleNumber){
-                    saveData.SavePeopleNumber = savedPeopleNumber;
+                if (readData.HistoryTopSavedNumber < savedPeopleNumber){
+                    saveData.HistoryTopSavedNumber = savedPeopleNumber;
                 }
                 else {
-                    saveData.SavePeopleNumber = readData.SavePeopleNumber;
+                    saveData.HistoryTopSavedNumber = readData.HistoryTopSavedNumber;
                 }
                 //check檔案中使否影經擁有角色
                 foreach(DropObjectsKeyEnum getkey in   player.GetCaughtKey()){
@@ -275,10 +275,11 @@ namespace Catcher.GameStates
                 saveData.CaughtDropObjects = readData.CaughtDropObjects;
             }
             else{ //如果沒有資料
-                saveData.SavePeopleNumber = savedPeopleNumber;
+                saveData.HistoryTopSavedNumber = savedPeopleNumber;
                 saveData.CaughtDropObjects = player.GetCaughtKey();
             }
-            
+            saveData.CurrentSavePeopleNumber = savedPeopleNumber;
+
             if (!isWriteingFile)
             {
                 try

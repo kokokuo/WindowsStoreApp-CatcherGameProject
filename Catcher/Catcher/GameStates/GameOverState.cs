@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Catcher.GameObjects;
 using Catcher.TextureManager;
+using Catcher.FileStorageHelper;
 using System.Diagnostics;
 namespace Catcher.GameStates
 {
@@ -16,6 +17,9 @@ namespace Catcher.GameStates
         Button menuButton;
         Button againButton;
 
+        GameRecordData readData;
+        string currentSavedPeoepleNumber;
+        SpriteFont currentSavedPeopleNumberFont;
         public GameOverState(MainGame gMainGame)
             : base(gMainGame)
         {
@@ -25,7 +29,7 @@ namespace Catcher.GameStates
         public override void LoadResource()
         {
             base.background = base.GetTexture2DList(TexturesKeyEnum.GAMEOVER_BACKGROUND)[0];
-
+            currentSavedPeopleNumberFont = base.GetSpriteFontFromKeyByGameState(FontManager.SpriteFontKeyEnum.GAME_VOER_CURRENT_SAVED_PEOPLE_FONT);
             menuButton.LoadResource(TexturesKeyEnum.GAMEOVER_MENU_BUTTON);
             againButton.LoadResource(TexturesKeyEnum.GAMEOVER_AGAIN_BUTTON);
 
@@ -37,12 +41,16 @@ namespace Catcher.GameStates
             menuButton = new Button(this, objIdCount++, 0, 0);
             againButton = new Button(this, objIdCount++, 0, 0);
 
+            currentSavedPeoepleNumber = "";
+
             AddGameObject(menuButton);
             AddGameObject(againButton);
 
         }
         public override void Update()
         {
+            Readcored(); 
+
             TouchCollection tc = base.GetCurrentFrameTouchCollection();
             bool isClickMenu, isClickAgain;
             isClickMenu = isClickAgain = false;
@@ -92,7 +100,23 @@ namespace Catcher.GameStates
         public override void Draw()
         {
             gameSateSpriteBatch.Draw(base.background, base.backgroundPos, Color.White);
+            gameSateSpriteBatch.DrawString(currentSavedPeopleNumberFont, currentSavedPeoepleNumber.ToString(), new Vector2(723,515), Color.Black);
             base.Draw(); //會把　AddGameObject方法中加入的物件作繪製
+        }
+
+
+        public async void Readcored()
+        {
+
+            var file = await StorageHelper.ReadTextFromFile("record.catcher");
+            if (!String.IsNullOrEmpty(file))
+            {
+                readData = JsonHelper.Deserialize<GameRecordData>(file);
+                currentSavedPeoepleNumber = readData.CurrentSavePeopleNumber.ToString();
+
+            }
+
+
         }
     }
 }
