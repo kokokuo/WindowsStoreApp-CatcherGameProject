@@ -11,10 +11,13 @@ using Catcher.GameObjects;
 using Catcher.TextureManager;
 using System.Diagnostics;
 using Catcher.FileStorageHelper;
+using Catcher.FontManager;
 namespace Catcher.GameStates.Dialog
 {
     public class DictionaryDialog : GameDialog
     {
+
+
         //按鈕
         Button leftButton;
         Button rightButton;
@@ -33,18 +36,29 @@ namespace Catcher.GameStates.Dialog
         TextureLayer oldmanIntroTexture;
         TextureLayer roxanneTexture;
         TextureLayer roxanneIntroTexture;
+        TextureLayer noTexture;
 
         //人物表參考DialogGameObjectEnum
         int roleStart;
         int roleEnd;
 
+        //判斷是否已讀
+        bool isDataRead;
+
+        GameRecordData readData;
+        List<DropObjectsKeyEnum> caughtObjects;
+
         public DictionaryDialog(GameState pCurrentState)
             : base(pCurrentState)
         {
-           
+
         }
         public override void BeginInit()
         {
+            isDataRead = false;
+            readData = new GameRecordData();
+            caughtObjects = new List<DropObjectsKeyEnum>();
+
             //設定人物起始直參考DialogGameObjectEnum數值
             roleStart = 1;
             roleEnd = 7;
@@ -68,21 +82,22 @@ namespace Catcher.GameStates.Dialog
             oldmanIntroTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
             roxanneTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
             roxanneIntroTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
+            noTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
 
             //設定目前Dialog狀態
             stCurrent = DialogStateEnum.STATE_DICTIONARY;
 
             //設定每次點近來都是以LittltGirl開頭
-            gtCurrent = DialogGameObjectEnum.DICTIONARY_LITTLEGIRL;
+            gtCurrent = DialogGameObjectEnum.DICTIONARY_FATDANCER;
 
             //把遊戲中物件加入gameObject，讓切換可以分開顯示
-            AddgameObject(DialogGameObjectEnum.DICTIONARY_LITTLEGIRL,new GameObject[]{littlegirlTexture,littlegirlIntroTexture,rightButton});
-            AddgameObject(DialogGameObjectEnum.DICTIONARY_FATDANCER, new GameObject[] { fatdancerTexture, fatdancerIntroTexture ,leftButton,rightButton});
-            AddgameObject(DialogGameObjectEnum.DICTIONARY_FLYOLDLADY, new GameObject[] { flyoldladyTexture, flyoldladyIntroTexture ,leftButton,rightButton});
-            AddgameObject(DialogGameObjectEnum.DICTIONARY_MANSTUBBLE, new GameObject[] { manstubbleTexture, manstubbleIntroTexture,leftButton,rightButton });
-            AddgameObject(DialogGameObjectEnum.DICTIONARY_NAUGHTYBOY, new GameObject[] { naughtyboyTexture, naughtyboyIntroTexture,leftButton,rightButton });
-            AddgameObject(DialogGameObjectEnum.DICTIONARY_OLDMAN, new GameObject[] { oldmanTexture, oldmanIntroTexture,leftButton,rightButton });
-            AddgameObject(DialogGameObjectEnum.DICTIONARY_ROXANNE, new GameObject[] { roxanneTexture, roxanneIntroTexture,leftButton });
+            AddgameObject(DialogGameObjectEnum.DICTIONARY_FATDANCER, new GameObject[] { fatdancerTexture, fatdancerIntroTexture, leftButton, rightButton });
+            AddgameObject(DialogGameObjectEnum.DICTIONARY_FLYOLDLADY, new GameObject[] { flyoldladyTexture, flyoldladyIntroTexture, leftButton, rightButton });
+            AddgameObject(DialogGameObjectEnum.DICTIONARY_LITTLEGIRL, new GameObject[] { littlegirlTexture, littlegirlIntroTexture, rightButton });
+            AddgameObject(DialogGameObjectEnum.DICTIONARY_MANSTUBBLE, new GameObject[] { manstubbleTexture, manstubbleIntroTexture, leftButton, rightButton });
+            AddgameObject(DialogGameObjectEnum.DICTIONARY_NAUGHTYBOY, new GameObject[] { naughtyboyTexture, naughtyboyIntroTexture, leftButton, rightButton });
+            AddgameObject(DialogGameObjectEnum.DICTIONARY_OLDMAN, new GameObject[] { oldmanTexture, oldmanIntroTexture, leftButton, rightButton });
+            AddgameObject(DialogGameObjectEnum.DICTIONARY_ROXANNE, new GameObject[] { roxanneTexture, roxanneIntroTexture, leftButton });
 
             //把gameObject放到ObjectTable集合裡面
             AddObjectTable(DialogStateEnum.STATE_DICTIONARY, GetDialogGameObject);
@@ -93,6 +108,9 @@ namespace Catcher.GameStates.Dialog
         }
         public override void LoadResource()
         {
+            //Test
+            noTexture.LoadResource(TexturesKeyEnum.DICTIONARY_NO);
+
             //載入字典遊戲物件資源檔
             background = currentState.GetTexture2DList(TextureManager.TexturesKeyEnum.DICTIONARY_BACKGROUND)[0];
             leftButton.LoadResource(TexturesKeyEnum.DICTIONARY_LEFT_BUTTON);
@@ -117,11 +135,22 @@ namespace Catcher.GameStates.Dialog
         }
         public override void Update()
         {
+            if (!isDataRead)
+            {
+                Readcored();
+                isDataRead = true;
+            }
+            else
+            {
+                ReleaseGameObject();
+            }
+
+
             if (!base.currentState.IsEmptyQueue())
             {
                 stCurrent = DialogStateEnum.STATE_DICTIONARY;
                 if (gtCurrent == DialogGameObjectEnum.EMPTY)
-                    gtCurrent = DialogGameObjectEnum.DICTIONARY_LITTLEGIRL;
+                    gtCurrent = DialogGameObjectEnum.DICTIONARY_FATDANCER;
 
                 TouchCollection tc = base.currentState.GetCurrentFrameTouchCollection();
 
@@ -136,6 +165,7 @@ namespace Catcher.GameStates.Dialog
                         //關閉按鈕
                         if (closeButton.IsPixelClick(tL.Position.X, tL.Position.Y))
                         {
+                            isDataRead = false;
                             base.CloseDialog();//透過父類別來關閉
                         }
 
@@ -160,6 +190,18 @@ namespace Catcher.GameStates.Dialog
                 }
             }
 
+
+            //else if (caughtObjects.Contains(DropObjectsKeyEnum.PERSON_FAT_DANCE))
+            //{
+            //    Debug.WriteLine("have---------------");
+            //    gtCurrent = DialogGameObjectEnum.DICTIONARY_FATDANCER;
+            //}
+            //else
+            //{
+            //    gtCurrent = DialogGameObjectEnum.DICTIONARY_NO;
+            //    Debug.WriteLine("NO-----------------");
+            //}
+
             base.Update(); //更新遊戲元件
         }
         public override void Draw()
@@ -167,6 +209,78 @@ namespace Catcher.GameStates.Dialog
 
             gameSateSpriteBatch.Draw(background, backgroundPos, Color.White);
             base.Draw(); //繪製遊戲元件
+        }
+
+        public async void Readcored()
+        {
+
+            var file = await StorageHelper.ReadTextFromFile("record.catcher");
+            if (!String.IsNullOrEmpty(file))
+            {
+                readData = JsonHelper.Deserialize<GameRecordData>(file);
+                caughtObjects = readData.CaughtDropObjects.ToList();
+                foreach (var item in caughtObjects)
+                {
+                    Debug.WriteLine((int)item);
+                }
+
+                //topSavedPeoepleNumber = readData.SavePeopleNumber.ToString() + "\nPeople";
+
+            }
+
+        }
+        public void ReleaseGameObject()
+        {
+            objectTable[DialogStateEnum.STATE_DICTIONARY].Clear();
+
+            //把遊戲中物件加入gameObject，讓切換可以分開顯示
+
+            //FatDancer
+            if (caughtObjects.Contains(DropObjectsKeyEnum.PERSON_FAT_DANCE))
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_FATDANCER, new GameObject[] { fatdancerTexture, fatdancerIntroTexture, rightButton });
+            else
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_FATDANCER, new GameObject[] { noTexture, rightButton });
+
+            //FlyOldlady
+            if (caughtObjects.Contains(DropObjectsKeyEnum.PERSON_FLY_OLDLADY))
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_FLYOLDLADY, new GameObject[] { flyoldladyTexture, flyoldladyIntroTexture, leftButton, rightButton });
+            else
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_FLYOLDLADY, new GameObject[] { noTexture, leftButton, rightButton });
+
+            //LittleGirl
+            if (caughtObjects.Contains(DropObjectsKeyEnum.PERSON_LITTLE_GIRL))
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_LITTLEGIRL, new GameObject[] { littlegirlTexture, littlegirlIntroTexture, leftButton, rightButton });
+            else
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_LITTLEGIRL, new GameObject[] { noTexture, leftButton, rightButton });
+
+            //Manstubble
+            if (caughtObjects.Contains(DropObjectsKeyEnum.PERSON_MAN_STUBBLE))
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_MANSTUBBLE, new GameObject[] { manstubbleTexture, manstubbleIntroTexture, leftButton, rightButton });
+            else
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_MANSTUBBLE, new GameObject[] { noTexture, leftButton, rightButton });
+
+            //NaughtyBoy
+            if (caughtObjects.Contains(DropObjectsKeyEnum.PERSON_NAUGHTY_BOY))
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_NAUGHTYBOY, new GameObject[] { naughtyboyTexture, naughtyboyIntroTexture, leftButton, rightButton });
+            else
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_NAUGHTYBOY, new GameObject[] { noTexture, leftButton, rightButton });
+
+            //OldMan
+            if (caughtObjects.Contains(DropObjectsKeyEnum.PERSON_OLD_MAN))
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_OLDMAN, new GameObject[] { oldmanTexture, oldmanIntroTexture, leftButton, rightButton });
+            else
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_OLDMAN, new GameObject[] { noTexture, leftButton, rightButton });
+
+
+            //Roxanne
+            if (caughtObjects.Contains(DropObjectsKeyEnum.PERSON_ROXANNE))
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_ROXANNE, new GameObject[] { roxanneTexture, roxanneIntroTexture, leftButton });
+            else
+                AddgameObject(DialogGameObjectEnum.DICTIONARY_ROXANNE, new GameObject[] { noTexture, leftButton });
+
+
+            //把gameObject放到ObjectTable集合裡面
+            //AddObjectTable(DialogStateEnum.STATE_DICTIONARY, GetDialogGameObject);
         }
     }
 }

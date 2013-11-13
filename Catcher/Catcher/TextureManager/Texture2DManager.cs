@@ -83,6 +83,7 @@ namespace Catcher.TextureManager
             LoadDialogRightButton();
 
             //載入字典對話框所用的圖像資源
+            LoadDictionaryDialogNoTexture();
             LoadDictionaryDialogBackground();
             LoadDictionaryDialogCloseButton();
             LoadDictionaryDialogLeftButton();
@@ -761,6 +762,18 @@ namespace Catcher.TextureManager
 
 
         //字典中元件------------------------------------------------------
+
+        //人物問號
+        private void LoadDictionaryDialogNoTexture()
+        {
+            TexturesKeyEnum key = TexturesKeyEnum.DICTIONARY_NO;
+            if (!_dictionary.ContainsKey(key))
+            {
+                List<Texture2D> texture2Ds = new List<Texture2D>();
+                texture2Ds.Add(mainGame.Content.Load<Texture2D>("Dialog/Dictionary/dictionary_no"));
+                _dictionary.Add(key, texture2Ds);
+            }
+        }
 
         //字典背景
         private void LoadDictionaryDialogBackground()

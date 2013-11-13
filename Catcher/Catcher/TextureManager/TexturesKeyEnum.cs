@@ -99,6 +99,8 @@ namespace Catcher.TextureManager
         DICTIONARY_ROXANNE_TEXTURE,
         DICTIONARY_ROXANNE_INTRO_TEXTURE,
 
+        DICTIONARY_NO,
+
         //HOWTOPLAY------------------------
         HOWTOPLAY_BACKGROUND,
         HOWTOPLAY_CLOSE_BUTTON,

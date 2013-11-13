@@ -357,6 +357,7 @@
     <Content Include="Content\Play\Item\Net expander.xnb" />
     <Content Include="Content\Play\Item\Net shrinker.xnb" />
     <Content Include="Content\Play\Item\slow.xnb" />
+    <Content Include="Content\Dialog\Dictionary\dictionary_no.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />
