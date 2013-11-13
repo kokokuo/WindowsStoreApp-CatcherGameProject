@@ -61,18 +61,29 @@ namespace Catcher.GameStates
                 //遊戲邏輯判斷
                 if (!( isClickMenu && isClickAgain))
                 {
-                    //如果isClickMenu有點擊,並且ClickAgain沒被點中
-                    if (isClickMenu && !isClickAgain)
-                    {
-                        Debug.WriteLine("CLICK!! STATE_MENU");
-                        SetNextGameSateByMain(GameStateEnum.STATE_MENU);
-                    }
-                    else if (isClickAgain && !isClickMenu)
+                     if (isClickAgain && !isClickMenu)
                     {
                         Debug.WriteLine("CLICK!! STATE_COMIC");
                         SetNextGameSateByMain(GameStateEnum.STATE_START_COMIC);
                     }
                 }
+                 //使用觸控單次點擊方式
+                TouchLocation tL = base.GetTouchLocation();
+                if (tL.State == TouchLocationState.Released)
+                {
+
+                    //關閉按鈕
+                    if ( menuButton.IsPixelClick(tL.Position.X, tL.Position.Y))
+                    {
+                        Debug.WriteLine("CLICK!! STATE_MENU");
+                        SetNextGameSateByMain(GameStateEnum.STATE_MENU);
+                    }
+                }
+
+                //清除TouchQueue裡的觸控點，因為避免Dequeue時候並不在Dialog中，因此要清除TouchQueue。
+                base.ClearTouchQueue();
+               
+            
             }
 
 
