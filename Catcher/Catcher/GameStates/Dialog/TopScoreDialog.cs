@@ -57,10 +57,19 @@ namespace Catcher.GameStates.Dialog
                     if (!isClickClose)
                         isClickClose = closeButton.IsPixelClick(touchLocation.Position.X, touchLocation.Position.Y);
                 }
-                
-                //遊戲邏輯判斷
-                if(isClickClose)
-                    base.CloseDialog(); //透過父類別來關閉
+
+                TouchLocation tL = base.currentState.GetTouchLocation();
+                if (tL.State == TouchLocationState.Released)
+                {
+                    //關閉按鈕
+                    if (closeButton.IsPixelClick(tL.Position.X, tL.Position.Y))
+                    {
+                        base.CloseDialog();//透過父類別來關閉
+                    }
+                }
+
+                //清除TouchQueue裡的觸控點，因為避免Dequeue時候並不在Dialog中，因此要清除TouchQueue。
+                base.currentState.ClearTouchQueue();
             }
 
             base.Update(); //更新遊戲元件

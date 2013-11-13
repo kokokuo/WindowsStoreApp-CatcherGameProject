@@ -76,7 +76,7 @@ namespace Catcher.GameStates.Dialog
             gtCurrent = DialogGameObjectEnum.DICTIONARY_LITTLEGIRL;
 
             //把遊戲中物件加入gameObject，讓切換可以分開顯示
-            AddgameObject(DialogGameObjectEnum.DICTIONARY_LITTLEGIRL,new GameObject[]{littlegirlTexture,littlegirlIntroTexture,leftButton,rightButton});
+            AddgameObject(DialogGameObjectEnum.DICTIONARY_LITTLEGIRL,new GameObject[]{littlegirlTexture,littlegirlIntroTexture,rightButton});
             AddgameObject(DialogGameObjectEnum.DICTIONARY_FATDANCER, new GameObject[] { fatdancerTexture, fatdancerIntroTexture ,leftButton,rightButton});
             AddgameObject(DialogGameObjectEnum.DICTIONARY_FLYOLDLADY, new GameObject[] { flyoldladyTexture, flyoldladyIntroTexture ,leftButton,rightButton});
             AddgameObject(DialogGameObjectEnum.DICTIONARY_MANSTUBBLE, new GameObject[] { manstubbleTexture, manstubbleIntroTexture,leftButton,rightButton });
@@ -124,30 +124,20 @@ namespace Catcher.GameStates.Dialog
                     gtCurrent = DialogGameObjectEnum.DICTIONARY_LITTLEGIRL;
 
                 TouchCollection tc = base.currentState.GetCurrentFrameTouchCollection();
-                bool isClickClose = false;
-                bool isLeftButton = false;
-                bool isRightButton = false;
+
                 if (tc.Count > 0)
                 {
-                    //所有當下的觸控點去判斷有無點到按鈕
-                    foreach (TouchLocation touchLocation in tc)
-                    {
-                        if (!isClickClose)
-                            isClickClose = closeButton.IsPixelClick(touchLocation.Position.X, touchLocation.Position.Y);
-                        if (!isLeftButton)
-                            isLeftButton = leftButton.IsPixelClick(touchLocation.Position.X, touchLocation.Position.Y);
-                        if (!isRightButton)
-                            isRightButton = rightButton.IsPixelClick(touchLocation.Position.X, touchLocation.Position.Y);
-                    }
-
-                    //遊戲邏輯判斷
-                    if (isClickClose)
-                        base.CloseDialog(); //透過父類別來關閉
 
                     //使用觸控單次點擊方式
                     TouchLocation tL = base.currentState.GetTouchLocation();
                     if (tL.State == TouchLocationState.Released)
                     {
+
+                        //關閉按鈕
+                        if (closeButton.IsPixelClick(tL.Position.X, tL.Position.Y))
+                        {
+                            base.CloseDialog();//透過父類別來關閉
+                        }
 
                         //左邊按鈕
                         if (leftButton.IsPixelClick(tL.Position.X, tL.Position.Y))
