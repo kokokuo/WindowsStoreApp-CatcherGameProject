@@ -10,10 +10,12 @@ using Catcher.GameStates;
 using Catcher.GameObjects;
 using Catcher.TextureManager;
 using System.Diagnostics;
+using Catcher.FileStorageHelper;
 namespace Catcher.GameStates.Dialog
 {
     public class DictionaryDialog : GameDialog
     {
+        //按鈕
         Button leftButton;
         Button rightButton;
         //角色
@@ -32,8 +34,10 @@ namespace Catcher.GameStates.Dialog
         TextureLayer roxanneTexture;
         TextureLayer roxanneIntroTexture;
 
+        //人物表參考DialogGameObjectEnum
         int roleStart;
         int roleEnd;
+
         public DictionaryDialog(GameState pCurrentState)
             : base(pCurrentState)
         {
@@ -41,13 +45,15 @@ namespace Catcher.GameStates.Dialog
         }
         public override void BeginInit()
         {
+            //設定人物起始直參考DialogGameObjectEnum數值
             roleStart = 1;
             roleEnd = 7;
+
+            //初始化按鈕、圖片位置
             backgroundPos = new Vector2(0, 0);
             closeButton = new Button(base.currentState, base.countId++, 0, 0);
             leftButton = new Button(base.currentState, base.countId++, 0, 0);
             rightButton = new Button(base.currentState, base.countId++, 0, 0);
-
             littlegirlTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
             littlegirlIntroTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
             fatdancerTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
@@ -63,10 +69,13 @@ namespace Catcher.GameStates.Dialog
             roxanneTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
             roxanneIntroTexture = new TextureLayer(base.currentState, base.countId++, 0, 0);
 
+            //設定目前Dialog狀態
             stCurrent = DialogStateEnum.STATE_DICTIONARY;
+
+            //設定每次點近來都是以LittltGirl開頭
             gtCurrent = DialogGameObjectEnum.DICTIONARY_LITTLEGIRL;
 
-
+            //把遊戲中物件加入gameObject，讓切換可以分開顯示
             AddgameObject(DialogGameObjectEnum.DICTIONARY_LITTLEGIRL,new GameObject[]{littlegirlTexture,littlegirlIntroTexture,leftButton,rightButton});
             AddgameObject(DialogGameObjectEnum.DICTIONARY_FATDANCER, new GameObject[] { fatdancerTexture, fatdancerIntroTexture ,leftButton,rightButton});
             AddgameObject(DialogGameObjectEnum.DICTIONARY_FLYOLDLADY, new GameObject[] { flyoldladyTexture, flyoldladyIntroTexture ,leftButton,rightButton});
@@ -75,19 +84,21 @@ namespace Catcher.GameStates.Dialog
             AddgameObject(DialogGameObjectEnum.DICTIONARY_OLDMAN, new GameObject[] { oldmanTexture, oldmanIntroTexture,leftButton,rightButton });
             AddgameObject(DialogGameObjectEnum.DICTIONARY_ROXANNE, new GameObject[] { roxanneTexture, roxanneIntroTexture,leftButton });
 
+            //把gameObject放到ObjectTable集合裡面
             AddObjectTable(DialogStateEnum.STATE_DICTIONARY, GetDialogGameObject);
 
+            //
             AddGameObject(closeButton);
             base.isInit = true;
         }
         public override void LoadResource()
         {
+            //載入字典遊戲物件資源檔
             background = currentState.GetTexture2DList(TextureManager.TexturesKeyEnum.DICTIONARY_BACKGROUND)[0];
             leftButton.LoadResource(TexturesKeyEnum.DICTIONARY_LEFT_BUTTON);
             rightButton.LoadResource(TexturesKeyEnum.DICTIONARY_RIGHT_BUTTON);
             littlegirlTexture.LoadResource(TexturesKeyEnum.DICTIONARY_LITTLEGIRL_TEXTURE);
             littlegirlIntroTexture.LoadResource(TexturesKeyEnum.DICTIONARY_LITTLEGIRL_INTRO_TEXTURE);
-
             fatdancerTexture.LoadResource(TexturesKeyEnum.DICTIONARY_FATDANCER_TEXTURE);
             fatdancerIntroTexture.LoadResource(TexturesKeyEnum.DICTIONARY_FATDANCER_INTRO_TEXTURE);
             flyoldladyTexture.LoadResource(TexturesKeyEnum.DICTIONARY_FLYOLDLADY_TEXTURE);
@@ -133,7 +144,6 @@ namespace Catcher.GameStates.Dialog
                     if (isClickClose)
                         base.CloseDialog(); //透過父類別來關閉
 
-                    //按鈕方式2
                     //使用觸控單次點擊方式
                     TouchLocation tL = base.currentState.GetTouchLocation();
                     if (tL.State == TouchLocationState.Released)
@@ -143,14 +153,15 @@ namespace Catcher.GameStates.Dialog
                         if (leftButton.IsPixelClick(tL.Position.X, tL.Position.Y))
                         {
                             if ((int)gtCurrent > roleStart)
-                                gtCurrent--;
+                                gtCurrent--;//gtCurrent-1來切換目前的遊戲顯示物件
                         }
 
                         //右邊按鈕
                         if (rightButton.IsPixelClick(tL.Position.X, tL.Position.Y))
                         {
+                            //判斷
                             if ((int)gtCurrent < roleEnd)
-                                gtCurrent++;
+                                gtCurrent++;//gtCurrent+1來切換目前的遊戲顯示物件
                         }
                     }
 
@@ -167,6 +178,5 @@ namespace Catcher.GameStates.Dialog
             gameSateSpriteBatch.Draw(background, backgroundPos, Color.White);
             base.Draw(); //繪製遊戲元件
         }
-
-    }
+        
 }
