@@ -29,7 +29,8 @@ namespace Catcher.GameStates.Dialog
             closeButton = new Button(base.currentState, base.countId++, 0, 0);
             AddGameObject(closeButton);
             topSavedPeoepleNumber = 0;
-
+            //讀取紀錄檔
+            Readcored();
             
 
             base.isInit = true;
@@ -42,14 +43,10 @@ namespace Catcher.GameStates.Dialog
             base.LoadResource(); //載入CloseButton 圖片資源
             base.isLoadContent = true;
         }
-        async public override void Update()
+        public override void Update()
         {
-            var file = await StorageHelper.ReadTextFromFile("record.catcher");
-            if (!String.IsNullOrEmpty(file))
-            {
-                readData = JsonHelper.Deserialize<GameRecordData>(file);
-                topSavedPeoepleNumber = readData.SavePeopleNumber;
-            }
+            //讀取紀錄檔
+            Readcored();
 
             TouchCollection tc = base.currentState.GetCurrentFrameTouchCollection();
             bool isClickClose = false;
@@ -82,5 +79,16 @@ namespace Catcher.GameStates.Dialog
             gameSateSpriteBatch.DrawString(topSavedPeopleNumberFont, topSavedPeoepleNumber.ToString() + "\nPeople", new Vector2(background.Width / 2, background.Height / 2 - topSavedPeopleNumberFont.MeasureString(topSavedPeoepleNumber.ToString()).Y / 2), Color.Black);
             base.Draw(); //繪製遊戲元件
         }
+
+        public async void Readcored()
+        {
+            var file = await StorageHelper.ReadTextFromFile("record.catcher");
+            if (!String.IsNullOrEmpty(file))
+            {
+                readData = JsonHelper.Deserialize<GameRecordData>(file);
+                topSavedPeoepleNumber = readData.SavePeopleNumber;
+            }
+        }
+
     }
 }
