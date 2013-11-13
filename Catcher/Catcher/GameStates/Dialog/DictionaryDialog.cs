@@ -178,5 +178,5 @@ namespace Catcher.GameStates.Dialog
             gameSateSpriteBatch.Draw(background, backgroundPos, Color.White);
             base.Draw(); //繪製遊戲元件
         }
-        
+    }
 }
