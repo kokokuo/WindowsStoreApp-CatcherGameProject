@@ -260,24 +260,6 @@
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\die_2.xnb">
       <Link>Content\Play\die_2.xnb</Link>
     </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\boosting_shoes.xnb">
-      <Link>Content\Play\Item\boosting_shoes.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\disappear.xnb">
-      <Link>Content\Play\Item\disappear.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\heart.xnb">
-      <Link>Content\Play\Item\heart.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\Net expander.xnb">
-      <Link>Content\Play\Item\Net expander.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\Net shrinker.xnb">
-      <Link>Content\Play\Item\Net shrinker.xnb</Link>
-    </Content>
-    <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\Item\slow.xnb">
-      <Link>Content\Play\Item\slow.xnb</Link>
-    </Content>
     <Content Include="..\DummyLibrary\bin\Windows Phone\Debug\CatcherContent\Play\life.xnb">
       <Link>Content\Play\life.xnb</Link>
     </Content>
@@ -373,6 +355,12 @@
     <Content Include="Content\Play\roxanne\roxanne_floor2.xnb" />
     <Content Include="Content\Play\roxanne\roxanne_floor3.xnb" />
     <Content Include="Content\Play\roxanne\roxanne_run.xnb" />
+    <Content Include="Content\Play\Item\boosting_shoes.xnb" />
+    <Content Include="Content\Play\Item\disappear.xnb" />
+    <Content Include="Content\Play\Item\heart.xnb" />
+    <Content Include="Content\Play\Item\Net expander.xnb" />
+    <Content Include="Content\Play\Item\Net shrinker.xnb" />
+    <Content Include="Content\Play\Item\slow.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />
