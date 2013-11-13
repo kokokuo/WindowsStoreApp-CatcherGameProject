@@ -1,39 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-
-  <Identity Name="cc489213-c4df-41bb-9b86-e4e3d1d3032c"
-            Publisher="CN=yi-cheng"
-            Version="1.0.0.0" />
-
+  <Identity Name="cc489213-c4df-41bb-9b86-e4e3d1d3032c" Publisher="CN=yi-cheng" Version="1.0.0.0" />
   <Properties>
     <DisplayName>Catcher</DisplayName>
     <PublisherDisplayName>yi-cheng</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.2.1</OSMinVersion>
     <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
-    <Resource Language="x-generate"/>
+    <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application Id="App"
-        Executable="$targetnametoken$.exe"
-        EntryPoint="Catcher.App">
-        <VisualElements
-            DisplayName="Catcher"
-            Logo="Assets\Logo.png"
-            SmallLogo="Assets\SmallLogo.png"
-            Description="Catcher"
-            ForegroundText="light"
-            BackgroundColor="#464646">
-            <DefaultTile ShowName="allLogos" />
-            <SplashScreen Image="Assets\SplashScreen.png" />
-        </VisualElements>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Catcher.App">
+      <VisualElements DisplayName="Catcher" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Catcher" ForegroundText="light" BackgroundColor="#8B1D22">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
     </Application>
   </Applications>
   <Capabilities>
